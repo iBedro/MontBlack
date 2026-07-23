@@ -1,0 +1,74 @@
+/* Mont Black — Circular avatar + animated orbit ring (HARD LOCK)
+   Do not flatten, square, or hide these rules. */
+
+@keyframes montSpin { to { transform: rotate(360deg); } }
+@keyframes montBreath {
+  0%, 100% { opacity: 0.35; }
+  50% { opacity: 0.85; }
+}
+
+html body ._3yD46y5pd3zOGR7CzKs0mC .avatarHolder {
+  position: relative !important;
+  width: 36px !important;
+  height: 36px !important;
+  min-width: 36px !important;
+  min-height: 36px !important;
+  border-radius: 50% !important;
+  overflow: visible !important;
+  aspect-ratio: 1 / 1 !important;
+  flex-shrink: 0 !important;
+  background: transparent !important;
+  margin-right: 6px !important;
+}
+html body ._3yD46y5pd3zOGR7CzKs0mC .avatar {
+  width: 36px !important;
+  height: 36px !important;
+  border-radius: 50% !important;
+  overflow: hidden !important;
+  aspect-ratio: 1 / 1 !important;
+  border: 2px solid #2a2a2a !important;
+  background: var(--mont-surface-2, #12141b) !important;
+}
+html body ._3yD46y5pd3zOGR7CzKs0mC .avatar img,
+html body ._3yD46y5pd3zOGR7CzKs0mC .avatarHolder img {
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+html body ._3yD46y5pd3zOGR7CzKs0mC .avatarHolder::before {
+  content: "" !important;
+  display: block !important;
+  position: absolute !important;
+  inset: -3px !important;
+  border-radius: 50% !important;
+  border: 1.5px solid rgba(102, 252, 241, 0.15) !important;
+  border-top-color: var(--mont-online-ring, #66FCF1) !important;
+  border-right-color: rgba(102, 252, 241, 0.55) !important;
+  animation: montSpin 3.4s linear infinite !important;
+  pointer-events: none !important;
+  z-index: 3 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+html body ._3yD46y5pd3zOGR7CzKs0mC .avatarHolder::after {
+  content: "" !important;
+  display: block !important;
+  position: absolute !important;
+  inset: -5px !important;
+  border-radius: 50% !important;
+  border: 1.5px solid rgba(102, 252, 241, 0.4) !important;
+  box-shadow: 0 0 12px rgba(102, 252, 241, 0.45) !important;
+  animation: montBreath 3.2s ease-in-out infinite !important;
+  pointer-events: none !important;
+  z-index: 0 !important;
+  background: transparent !important;
+}
+
+/* Kill Steam status slabs that break the circle */
+html body ._3yD46y5pd3zOGR7CzKs0mC .avatarStatus,
+html body ._3yD46y5pd3zOGR7CzKs0mC [class*="avatarStatus"],
+html body ._3yD46y5pd3zOGR7CzKs0mC [class*="AvatarFrame"] {
+  display: none !important;
+}

@@ -1,0 +1,2624 @@
+/* Mont Black 5.2.1 — modular entry
+   Misc = accents + remove shadows + Millennium fixes
+   Main = Header + Store
+   Rest = library/menus/dialogs */
+
+@import url("Misc/Accents Code/tokens.css");
+@import url("Misc/Accents Code/accents.css");
+@import url("Misc/Remove Stuff/unify-black.css");
+@import url("Misc/Remove Stuff/remove-shadows.css");
+@import url("Main/Header/topbar.css");
+@import url("Main/Header/avatar-orbit.css");
+@import url("Misc/Fix Millennium Stuff/dropdown-fix.css");
+@import url("Misc/Fix Millennium Stuff/millennium-icons.css");
+
+:root {
+  color-scheme: dark;
+  --mont-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --mont-fast: 120ms;
+  --mont-med: 220ms;
+  --mont-slow: 360ms;
+  --mont-nav-idle: #a8a8ae;
+  --mont-glass-fill: rgba(255, 255, 255, 0.10);
+  --mont-glass-border: rgba(255, 255, 255, 0.22);
+  --mont-glass-gradient: linear-gradient(
+    165deg,
+    rgba(255, 255, 255, 0.20) 0%,
+    rgba(210, 230, 255, 0.08) 45%,
+    rgba(255, 255, 255, 0.05) 100%
+  );
+  --mont-radius-pill: 999px;
+  --mont-radius-menu: 16px;
+}
+
+body,
+.DesktopUI,
+.fullheight,
+#SteamDesktop {
+  background: var(--mont-bg, #0B0C10) !important;
+  color: var(--mont-text, #ffffff) !important;
+}
+
+/* ===== Steam URL / address bar + Home tab (client chrome) ===== */
+/* Exact steamui hashes: URLBar / URLBarText / URL / BrowserTab */
+._26Gmfe09NRsnF7eprTZYdY,
+.UkR3sY319PuaUNuUWks2K,
+._1bGewp3tfzqAF6fVTFFUOz .UkR3sY319PuaUNuUWks2K {
+  background: #121212 !important;
+  background-color: #121212 !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  border-color: transparent !important;
+  color: #c8c8c8 !important;
+}
+
+._1d2NZ4Jt0wrdapfvDFhpVS {
+  background: transparent !important;
+  border-radius: 10px !important;
+}
+
+._1d2NZ4Jt0wrdapfvDFhpVS:hover {
+  background: #1a1a1a !important;
+  cursor: pointer !important;
+}
+
+._1d2NZ4Jt0wrdapfvDFhpVS::after {
+  background: #1a1a1a !important;
+}
+
+._1W55urU2WazGofFzN0_jHB,
+._1d2NZ4Jt0wrdapfvDFhpVS ._1W55urU2WazGofFzN0_jHB,
+._1d2NZ4Jt0wrdapfvDFhpVS:hover ._1W55urU2WazGofFzN0_jHB {
+  color: #e8e8e8 !important;
+}
+
+._2UTNf-Ec4o5_3LPJtc2u7M,
+._3izqEKa-zuPIrUDSm1bRvf,
+._26Gmfe09NRsnF7eprTZYdY svg,
+.UkR3sY319PuaUNuUWks2K svg {
+  color: #9aa3b0 !important;
+  fill: #9aa3b0 !important;
+}
+
+._1oXr_GpvIgjHasLyU3tBn:hover {
+  background: #1a1a1a !important;
+  color: #ffffff !important;
+  border-radius: 8px !important;
+}
+
+._1oXr_GpvIgjHasLyU3tBn._1f6yYACTilZQ2dmqGd5zXk {
+  color: #3a3a3a !important;
+}
+
+/* Browser tabs row (Home, etc.) */
+.aqvbkhC1ejt4s8QvWA-c5,
+.aqvbkhC1ejt4s8QvWA-c5 .TSlxCkeUMGwzmg21_WU8-,
+.TSlxCkeUMGwzmg21_WU8- {
+  background: #121212 !important;
+  background-color: #121212 !important;
+  border-color: #1a1a1a !important;
+  color: #c8c8c8 !important;
+}
+
+.aqvbkhC1ejt4s8QvWA-c5 .TSlxCkeUMGwzmg21_WU8-:hover,
+.TSlxCkeUMGwzmg21_WU8-:hover {
+  background-color: #1a1a1a !important;
+}
+
+.aqvbkhC1ejt4s8QvWA-c5 .TSlxCkeUMGwzmg21_WU8-._1W4bbifjEN3KdqKEhpmies,
+.TSlxCkeUMGwzmg21_WU8-._1W4bbifjEN3KdqKEhpmies,
+._1W4bbifjEN3KdqKEhpmies {
+  background: #252525 !important;
+  background-color: #252525 !important;
+  border-color: #252525 !important;
+  color: #ffffff !important;
+}
+
+.aqvbkhC1ejt4s8QvWA-c5 .TSlxCkeUMGwzmg21_WU8- ._2RI6oQrDKUNzBqhIk4zI,
+._2RI6oQrDKUNzBqhIk4zI {
+  color: #ffffff !important;
+}
+
+._1bGewp3tfzqAF6fVTFFUOz,
+[class*="BrowserWrapper"] {
+  background: #0B0C10 !important;
+  background-color: #0B0C10 !important;
+  background-image: none !important;
+  border-color: transparent !important;
+}
+
+/* ===== Top bar — one charcoal tone (no seam) ===== */
+._3Z7VQ1IMk4E3HsHvrkLNgo,
+._2CmrnGY-Amtd83ScJkFvx2,
+.title-area,
+.title-area-children,
+.title-bar-actions,
+.title-bar-actions.window-controls,
+.title-bar-actions.extra-actions,
+.localmenu,
+[class*="steamdesktop_TitleBar"],
+[class*="TitleBar"],
+[class*="TitleBarControls"],
+[class*="titlebarcontrols"] {
+  background: var(--mont-bg, #0B0C10) !important;
+  background-color: var(--mont-bg, #0B0C10) !important;
+  background-image: none !important;
+  border-color: transparent !important;
+  color: #c8c8c8 !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+}
+
+._2CmrnGY-Amtd83ScJkFvx2 {
+  display: none !important;
+}
+
+/* Window controls (min / max / close) + Big Picture — same plate */
+.DesktopUI .title-area-icon,
+.title-area-icon,
+.title-bar-actions .title-area-icon,
+.title-bar-actions.window-controls .title-area-icon,
+._2Szzh5sKyGgnLUR870zbDE {
+  width: 32px !important;
+  height: 32px !important;
+  border-radius: 8px !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  color: #8a8a8a !important;
+  transition: background-color 140ms cubic-bezier(0.22, 1, 0.36, 1), color 140ms cubic-bezier(0.22, 1, 0.36, 1) !important;
+}
+
+.DesktopUI .title-area-icon:hover,
+.title-area-icon:hover,
+._2Szzh5sKyGgnLUR870zbDE:hover {
+  background: #2a2a2a !important;
+  color: #e6e6e6 !important;
+}
+
+/* Utility icons — watery translucent glass capsules */
+[class*="TitleBar"] button:not(.DialogButton):not(.title-area-icon),
+[class*="titlebar"] button:not(.DialogButton):not(.title-area-icon),
+[class*="TitleBarControls"] button,
+[class*="titlebarcontrols"] button,
+[class*="steamdesktop_TitleBar"] button:not(.DialogButton),
+.localmenu > button,
+.localmenu button,
+[class*="TopBar"] button:not(.DialogButton),
+[class*="topbar"] button:not(.DialogButton) {
+  width: 36px !important;
+  height: 36px !important;
+  min-width: 36px !important;
+  min-height: 36px !important;
+  border-radius: 999px !important;
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  background-image: linear-gradient(
+    165deg,
+    rgba(255, 255, 255, 0.22) 0%,
+    rgba(255, 255, 255, 0.06) 42%,
+    rgba(180, 210, 235, 0.08) 100%
+  ) !important;
+  border: 1px solid rgba(255, 255, 255, 0.22) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.35),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.2),
+    0 2px 10px rgba(0, 0, 0, 0.25) !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+  color: #c5ced8 !important;
+  fill: #c5ced8 !important;
+  margin: 0 3px !important;
+  transition:
+    background-color 200ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 200ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 200ms cubic-bezier(0.22, 1, 0.36, 1),
+    color 160ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 160ms cubic-bezier(0.22, 1, 0.36, 1) !important;
+}
+
+[class*="TitleBar"] button:not(.DialogButton):not(.title-area-icon):hover,
+[class*="titlebar"] button:not(.DialogButton):not(.title-area-icon):hover,
+[class*="TitleBarControls"] button:hover,
+[class*="titlebarcontrols"] button:hover,
+[class*="steamdesktop_TitleBar"] button:not(.DialogButton):hover,
+.localmenu button:hover,
+[class*="TopBar"] button:not(.DialogButton):hover,
+[class*="topbar"] button:not(.DialogButton):hover {
+  background-color: rgba(255, 255, 255, 0.16) !important;
+  border-color: rgba(255, 255, 255, 0.34) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.5),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.15),
+    0 4px 14px rgba(0, 0, 0, 0.3) !important;
+  color: #ffffff !important;
+  fill: #ffffff !important;
+  transform: translateY(-1px) scale(1.04);
+}
+
+[class*="TitleBar"] button svg,
+[class*="TitleBarControls"] button svg,
+[class*="titlebarcontrols"] button svg,
+.localmenu button svg {
+  color: inherit !important;
+  fill: currentColor !important;
+  opacity: 0.92 !important;
+}
+
+/* Do not restyle the circular orbit profile button plate */
+._3yD46y5pd3zOGR7CzKs0mC,
+._3yD46y5pd3zOGR7CzKs0mC button {
+  background: transparent !important;
+  width: auto !important;
+  height: auto !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* Chevron next to profile — soft cyan accent */
+._3yD46y5pd3zOGR7CzKs0mC ._3x51wbt5DYyWC8JKwQ51ir,
+._3yD46y5pd3zOGR7CzKs0mC [class*="Chevron"],
+._3yD46y5pd3zOGR7CzKs0mC [class*="chevron"] {
+  color: #66FCF1 !important;
+  fill: #66FCF1 !important;
+  margin-left: 2px !important;
+}
+
+/* Library layout */
+._3mz8wQ6Q44B8P7pzPP4Iyw,
+._1ENHEsrSLcTRtPQFl1F-wL {
+  background: #0B0C10 !important;
+}
+
+._3x1HklzyDs4TEjACrRO2tB,
+._2PF_m-I5yte3WnQhpcz8RC,
+._20QAC4WMXm8qFE8waUT5oo {
+  background: #0B0C10 !important;
+  border-right: 1px solid rgba(255, 255, 255, 0.07) !important;
+  color: #ffffff !important;
+  overflow-x: hidden !important;
+}
+
+._2TKEazUUS3TlniZfpc8OOe {
+  background: transparent !important;
+  margin: 8px !important;
+  gap: 8px !important;
+}
+
+._3pSPluBgf0NeR1kkCLWMhR {
+  border-radius: 10px !important;
+  color: #b8b8be !important;
+  padding: 6px 12px !important;
+  margin: 0 2px !important;
+  transition: background-color 220ms cubic-bezier(0.22, 1, 0.36, 1), color 220ms cubic-bezier(0.22, 1, 0.36, 1) !important;
+}
+
+._3pSPluBgf0NeR1kkCLWMhR:hover {
+  background: rgba(255, 255, 255, 0.06) !important;
+  color: #ffffff !important;
+}
+
+._2sYIghGVXJr6tsQVvcryy8,
+._3km84Vscc0uS91f0RN_30C {
+  color: #7a7a82 !important;
+  margin-top: 10px !important;
+  margin-bottom: 4px !important;
+  letter-spacing: 0.04em !important;
+  text-transform: uppercase !important;
+  font-size: 11px !important;
+  opacity: 0.8 !important;
+}
+
+/* ===== Game list — watery glass capsule + stronger motion ===== */
+@keyframes montGameGlassIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.88);
+  }
+  55% {
+    opacity: 1;
+    transform: scale(1.035);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes montGameRowLift {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(3px);
+  }
+}
+
+._2-O4ZG0KrnSrzISHBKctFQ {
+  position: relative !important;
+  isolation: isolate !important;
+  z-index: 0 !important;
+  border-radius: 999px !important;
+  margin: 2px 10px !important;
+  padding: 6px 12px !important;
+  color: #ffffff !important;
+  max-width: calc(100% - 20px) !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  border: 1px solid transparent !important;
+  outline: none !important;
+  filter: none !important;
+  text-shadow: none !important;
+  transform: translateX(0) !important;
+  transition:
+    transform 280ms cubic-bezier(0.22, 1, 0.36, 1),
+    color 200ms ease !important;
+}
+
+/* Glass layer behind icon/text — blur only the plate, not the label */
+._2-O4ZG0KrnSrzISHBKctFQ::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 0 !important;
+  border-radius: 999px !important;
+  pointer-events: none !important;
+  opacity: 0 !important;
+  transform: scale(0.9) !important;
+  background:
+    linear-gradient(
+      165deg,
+      rgba(255, 255, 255, 0.22) 0%,
+      rgba(210, 230, 255, 0.10) 42%,
+      rgba(255, 255, 255, 0.05) 100%
+    ) !important;
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.35),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.18),
+    0 4px 14px rgba(0, 0, 0, 0.22) !important;
+  -webkit-backdrop-filter: blur(14px) saturate(1.35) !important;
+  backdrop-filter: blur(14px) saturate(1.35) !important;
+  transition:
+    opacity 320ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 380ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 280ms ease,
+    box-shadow 320ms ease !important;
+}
+
+._2-O4ZG0KrnSrzISHBKctFQ > * {
+  position: relative !important;
+  z-index: 1 !important;
+  filter: none !important;
+  text-shadow: none !important;
+}
+
+._2-O4ZG0KrnSrzISHBKctFQ:hover {
+  background: transparent !important;
+  transform: translateX(3px) !important;
+}
+
+._2-O4ZG0KrnSrzISHBKctFQ:hover::before {
+  opacity: 0.85 !important;
+  transform: scale(1) !important;
+  border-color: rgba(255, 255, 255, 0.26) !important;
+}
+
+/* Selected game — stronger glass pop */
+._1UBpAXP408Ez_L_mXhW5Q9 {
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  filter: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+._1UBpAXP408Ez_L_mXhW5Q9 ._2-O4ZG0KrnSrzISHBKctFQ {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  border: 1px solid transparent !important;
+  outline: none !important;
+  transform: translateX(4px) !important;
+  overflow: hidden !important;
+  filter: none !important;
+  text-shadow: none !important;
+}
+
+._1UBpAXP408Ez_L_mXhW5Q9 ._2-O4ZG0KrnSrzISHBKctFQ::before {
+  opacity: 1 !important;
+  transform: scale(1) !important;
+  animation: montGameGlassIn 420ms cubic-bezier(0.22, 1, 0.36, 1) both !important;
+  background:
+    linear-gradient(
+      165deg,
+      rgba(255, 255, 255, 0.30) 0%,
+      rgba(154, 171, 192, 0.18) 40%,
+      rgba(255, 255, 255, 0.08) 100%
+    ) !important;
+  border-color: rgba(255, 255, 255, 0.34) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.48),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.16),
+    0 0 0 1px rgba(154, 171, 192, 0.18),
+    0 6px 18px rgba(0, 0, 0, 0.28) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(1.45) !important;
+  backdrop-filter: blur(18px) saturate(1.45) !important;
+}
+
+.dRVTag1OzxUF8m505Qwk2,
+._2vunF9uzI1fse6sevy7bk,
+._1-pw9nt67yKtwfHbA94r3w,
+._1zxijcjihukKOJRGN4x7kH {
+  filter: none !important;
+  text-shadow: none !important;
+  opacity: 1 !important;
+}
+
+._1zxijcjihukKOJRGN4x7kH,
+._2-O4ZG0KrnSrzISHBKctFQ img {
+  border-radius: 6px !important;
+  transition: transform 320ms cubic-bezier(0.22, 1, 0.36, 1) !important;
+}
+
+._2-O4ZG0KrnSrzISHBKctFQ:hover img,
+._1UBpAXP408Ez_L_mXhW5Q9 ._2-O4ZG0KrnSrzISHBKctFQ img {
+  transform: scale(1.06) !important;
+}
+
+._12vo5L1hsNGdao6_ssuirS,
+._20QAC4WMXm8qFE8waUT5oo .vCCmYvn9yQ_V8CpKupllU {
+  border-radius: 999px !important;
+  background: #12141b !important;
+  border: 1px solid rgba(255, 255, 255, 0.07) !important;
+}
+
+._20QAC4WMXm8qFE8waUT5oo .DialogTextInputBase {
+  border-bottom: none !important;
+  color: #ffffff !important;
+}
+
+._2Dd4T78PcCTUVgOtDGFY5j,
+._2g5K_hJWc7jVo81zuejhk2 {
+  background: #0B0C10 !important;
+  border-radius: 0 !important;
+  color: #ffffff !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* ===== Library Home — one black plane (no band cuts) ===== */
+[class*="libraryhome_"],
+[class*="LibraryHome"],
+[class*="WhatsNew"],
+[class*="whatsnew"],
+[class*="UpdatesContainer"],
+[class*="updatescontainer"],
+[class*="HomePage"],
+[class*="homepage_"],
+[class*="Shelf"],
+[class*="shelf_"],
+[class*="RecentGames"],
+[class*="recentgames"],
+[class*="PlayNext"],
+[class*="playnext"],
+._17uEBe5Ri8TMsnfELvs8-N,
+._3Sb2o_mQ30IDRh0C72QUUu,
+._2gSXCB6PbOlMxslr8hm6dm,
+.Jbe--NUNw7sxbxGsMSjVa,
+.RGNMWtyj73_-WdhflrmuY,
+._1bq4x9pa4-9RLY-dXWUZTp {
+  background: #0B0C10 !important;
+  background-color: #0B0C10 !important;
+  background-image: none !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Kill section separators / blue-grey washes between shelves */
+[class*="libraryhome_"] [class*="Background"],
+[class*="LibraryHome"] [class*="Background"],
+[class*="Shelf"] [class*="Background"],
+[class*="WhatsNew"] [class*="Background"],
+[class*="libraryhome_"]::before,
+[class*="libraryhome_"]::after,
+[class*="Shelf"]::before,
+[class*="Shelf"]::after {
+  background: #0B0C10 !important;
+  background-image: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  pointer-events: none !important;
+}
+
+[class*="libraryhome_"],
+[class*="Shelf"],
+._17uEBe5Ri8TMsnfELvs8-N,
+._3Sb2o_mQ30IDRh0C72QUUu {
+  border-top: none !important;
+  border-bottom: none !important;
+  outline: none !important;
+}
+
+/* Bottom bar — must stay clickable (Steam defaults this region to drag) */
+[class*="bottombar_"],
+[class*="BottomBar"],
+[class*="status-bar"],
+._3vCzSrrXZzZjVJFZNg9SGu,
+[class*="DownloadsBar"],
+[class*="downloadsbar"],
+[class*="bottombarcontrols"],
+[class*="BottomBarControls"] {
+  background: var(--mont-bg, #0B0C10) !important;
+  background-color: var(--mont-bg, #0B0C10) !important;
+  background-image: none !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.04) !important;
+  box-shadow: none !important;
+  pointer-events: auto !important;
+  position: relative !important;
+  z-index: 500 !important;
+  flex: 0 0 50px !important;
+  min-height: 50px !important;
+  max-height: 56px !important;
+  overflow: visible !important;
+  /* CRITICAL: drag on this bar eats all clicks — force no-drag */
+  -webkit-app-region: no-drag !important;
+}
+
+._3vCzSrrXZzZjVJFZNg9SGu *,
+[class*="BottomBar"] *,
+[class*="bottombar_"] *,
+[class*="DownloadsBar"] *,
+[class*="downloadsbar"] * {
+  pointer-events: auto !important;
+  -webkit-app-region: no-drag !important;
+}
+
+/* Game capsules keep slight lift; shelves stay flat black */
+._7EGqd8bdiXJBd2fj5Hh8r {
+  border-radius: 14px !important;
+  overflow: hidden !important;
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+  background: #12141b !important;
+  transition: transform 220ms cubic-bezier(0.22, 1, 0.36, 1), border-color 220ms cubic-bezier(0.22, 1, 0.36, 1) !important;
+}
+
+._7EGqd8bdiXJBd2fj5Hh8r:hover {
+  border-color: rgba(255, 255, 255, 0.12) !important;
+  transform: translateY(-2px);
+}
+
+/* Play / Install — previous grouped look */
+._1FnJ6dPuknQFQ2RTpKTI16 {
+  border-radius: 999px !important;
+  overflow: hidden !important;
+  box-shadow: 0 0 16px rgba(61, 122, 184, 0.28) !important;
+}
+
+._3ydigb6zZAjJ0JCDgHwSYA,
+.Z5iAXBkRFGnwpXsO8ANTl,
+._2q-gZ3XJzlvSGHSF-GvSmi {
+  border-radius: 14px !important;
+  transition:
+    background-color 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 120ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    filter 220ms cubic-bezier(0.22, 1, 0.36, 1) !important;
+}
+
+._1FnJ6dPuknQFQ2RTpKTI16 ._3ydigb6zZAjJ0JCDgHwSYA {
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+
+._1FnJ6dPuknQFQ2RTpKTI16 ._2q-gZ3XJzlvSGHSF-GvSmi {
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+}
+
+.DesktopUI .Z5iAXBkRFGnwpXsO8ANTl.Play,
+.DesktopUI .Z5iAXBkRFGnwpXsO8ANTl.Install,
+.DesktopUI .Z5iAXBkRFGnwpXsO8ANTl.Launch,
+.DesktopUI .Z5iAXBkRFGnwpXsO8ANTl.Update,
+._3ydigb6zZAjJ0JCDgHwSYA,
+.Z5iAXBkRFGnwpXsO8ANTl,
+button.DialogButton.Primary,
+.DialogButton.Primary {
+  background: #2f6fad !important;
+  background-image: none !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(120, 180, 240, 0.35) !important;
+  border-radius: 999px !important;
+  box-shadow: 0 0 14px rgba(47, 111, 173, 0.45) !important;
+  text-shadow: none !important;
+}
+
+.DesktopUI .Z5iAXBkRFGnwpXsO8ANTl.Play:hover,
+.DesktopUI .Z5iAXBkRFGnwpXsO8ANTl.Install:hover,
+.DesktopUI .Z5iAXBkRFGnwpXsO8ANTl.Launch:hover,
+.DesktopUI .Z5iAXBkRFGnwpXsO8ANTl.Update:hover,
+button.DialogButton.Primary:hover,
+._3ydigb6zZAjJ0JCDgHwSYA:hover,
+.Z5iAXBkRFGnwpXsO8ANTl:hover {
+  background: #3d86c9 !important;
+  color: #ffffff !important;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(47, 111, 173, 0.55) !important;
+}
+
+._3ydigb6zZAjJ0JCDgHwSYA:active,
+.Z5iAXBkRFGnwpXsO8ANTl:active,
+button.DialogButton.Primary:active {
+  transform: translateY(0) scale(0.98);
+}
+
+._31ptFGGMZrSQc5BCX1e5lm,
+._5uvIN6jXDXzzck59F-nhv,
+._3eVREaIAGyRjbf0bkFjR9Y,
+._1VNuYHM6BPBOJspC6zPf5r {
+  border-radius: 14px !important;
+  border: 1px solid rgba(255, 255, 255, 0.07) !important;
+  background: #12141b !important;
+  color: #ffffff !important;
+}
+
+._3Cdin80d-hVsakHUZboheb {
+  border-radius: 999px !important;
+  background: #161616 !important;
+  border: 1px solid rgba(255, 255, 255, 0.07) !important;
+  color: #ffffff !important;
+}
+
+.ModalDialogPopup .DialogContent,
+.ModalPosition_Content,
+.DialogBody,
+.DialogHeader,
+.DialogFooter {
+  background: #0B0C10 !important;
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.07) !important;
+}
+
+/* Soft rounded dialog windows — overflow visible so menus can portal correctly */
+body.ModalDialogPopup .DialogContent,
+body.ModalDialogPopup .ModalPosition_Content,
+.ModalDialogPopup .DialogContent,
+.ModalDialogPopup .DialogContentTransition,
+.ModalPosition,
+.ModalPosition_Content,
+.DialogContent,
+.DialogContent_InnerWidth,
+.DialogContentTransition {
+  border-radius: 20px !important;
+  overflow: visible !important;
+  transform: none !important;
+}
+
+.ModalDialogPopup .DialogHeader {
+  border-top-left-radius: 20px !important;
+  border-top-right-radius: 20px !important;
+}
+
+.ModalDialogPopup .DialogFooter {
+  border-bottom-left-radius: 20px !important;
+  border-bottom-right-radius: 20px !important;
+}
+
+button.DialogButton {
+  background: #161616 !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.07) !important;
+  transition:
+    background-color 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 120ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 220ms cubic-bezier(0.22, 1, 0.36, 1) !important;
+}
+
+button.DialogButton:hover {
+  background: #161616 !important;
+  border-color: rgba(255, 255, 255, 0.14) !important;
+  transform: translateY(-1px);
+}
+
+/* Nav */
+.PP7LM0OwQCEdZRdRPdj2a a,
+.PP7LM0OwQCEdZRdRPdj2a .supernav_item,
+.supernav_item {
+  color: #b8b8be !important;
+  transition: color 220ms cubic-bezier(0.22, 1, 0.36, 1) !important;
+}
+
+.supernav_item:hover,
+.supernav_item.active,
+.PP7LM0OwQCEdZRdRPdj2a a:hover {
+  color: #ffffff !important;
+}
+
+/* ===== SuperNav — clean labels, glass only on active pill, charcoal dropdowns =====
+   CRITICAL: items must flex-shrink:0. Steam defaults to shrink=1; with overflow
+   visible, LIBRARY/COMMUNITY/profile labels paint on top of each other. */
+._3Z3ohQ8-1NKnCZkbS6fvy,
+._2D64jIEK7wpUR_NlObDW76 {
+  position: relative !important;
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  align-items: center !important;
+  overflow: visible !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  gap: 0 !important;
+}
+
+/* Idle labels — text only, no pill plates (fixes smudge distortion) */
+._7AlhCx3XGzBeIrQaCneUD {
+  position: relative !important;
+  z-index: 2 !important;
+  flex: 0 0 auto !important;
+  flex-shrink: 0 !important;
+  flex-grow: 0 !important;
+  width: auto !important;
+  min-width: max-content !important;
+  max-width: none !important;
+  height: inherit !important;
+  box-sizing: border-box !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+  padding: 0 12px !important;
+  margin: 0 !important;
+  white-space: nowrap !important;
+  letter-spacing: normal !important;
+  font-size: 18px !important;
+  font-weight: 500 !important;
+  text-transform: uppercase !important;
+  line-height: normal !important;
+  display: flex !important;
+  align-items: center !important;
+  transition: color var(--mont-med, 220ms) var(--mont-ease, cubic-bezier(0.22, 1, 0.36, 1)) !important;
+}
+
+._7AlhCx3XGzBeIrQaCneUD:first-child {
+  padding-left: 6px !important;
+}
+
+._7AlhCx3XGzBeIrQaCneUD:last-child {
+  padding-right: 6px !important;
+}
+
+._7AlhCx3XGzBeIrQaCneUD ._19axKcqYRuaJ8vdYKYmtTQ {
+  color: var(--mont-nav-idle, #a8a8ae) !important;
+  text-shadow: none !important;
+  background: transparent !important;
+  display: inline-block !important;
+  width: auto !important;
+  min-width: max-content !important;
+  max-width: none !important;
+  height: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  white-space: nowrap !important;
+  letter-spacing: normal !important;
+  font-size: inherit !important;
+  font-weight: inherit !important;
+  line-height: inherit !important;
+  flex-shrink: 0 !important;
+  transform: none !important;
+  transition: color var(--mont-med, 220ms) var(--mont-ease, cubic-bezier(0.22, 1, 0.36, 1)) !important;
+}
+
+._7AlhCx3XGzBeIrQaCneUD:hover:not(._2cO0HdvLEGAdhosLekWsmo) ._19axKcqYRuaJ8vdYKYmtTQ,
+._7AlhCx3XGzBeIrQaCneUD._1gqEjB5QsKT_NftD1dEsdZ:not(._2cO0HdvLEGAdhosLekWsmo) ._19axKcqYRuaJ8vdYKYmtTQ {
+  color: var(--mont-text, #ffffff) !important;
+  text-shadow: none !important;
+}
+
+._7AlhCx3XGzBeIrQaCneUD:hover:not(._1gqEjB5QsKT_NftD1dEsdZ):not(._2cO0HdvLEGAdhosLekWsmo),
+._7AlhCx3XGzBeIrQaCneUD.Eq8Px4ixn5sAFSR6_9wWQ {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  padding: 0 12px !important;
+  flex-shrink: 0 !important;
+  min-width: max-content !important;
+  max-width: none !important;
+}
+
+/* Active tab — CSS glass pill (no JS / no #mont-nav-glass) */
+._7AlhCx3XGzBeIrQaCneUD._1gqEjB5QsKT_NftD1dEsdZ:not(._2cO0HdvLEGAdhosLekWsmo) {
+  background-color: var(--mont-glass-fill, rgba(255, 255, 255, 0.10)) !important;
+  background-image: var(--mont-glass-gradient) !important;
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+  border-radius: var(--mont-radius-pill, 999px) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.28) !important;
+  padding: 4px 14px !important;
+  margin: 0 2px !important;
+}
+
+._7AlhCx3XGzBeIrQaCneUD._1gqEjB5QsKT_NftD1dEsdZ:not(._2cO0HdvLEGAdhosLekWsmo) ._19axKcqYRuaJ8vdYKYmtTQ::after {
+  display: none !important;
+  content: none !important;
+  animation: none !important;
+}
+
+/* Legacy JS pill — hide if leftover in DOM */
+#mont-nav-glass {
+  display: none !important;
+  pointer-events: none !important;
+  opacity: 0 !important;
+}
+
+/* STORE / LIBRARY / COMMUNITY dropdown PANEL only (not the label) */
+html body ._3pofGqV0buiKAfMPEs3_82,
+html body.DesktopUI ._3pofGqV0buiKAfMPEs3_82,
+.DesktopUI ._3pofGqV0buiKAfMPEs3_82,
+._3pofGqV0buiKAfMPEs3_82 {
+  background: var(--mont-bg, #0B0C10) !important;
+  background-color: var(--mont-bg, #0B0C10) !important;
+  background-image: none !important;
+  border-radius: var(--mont-radius-menu, 16px) !important;
+  border: 1px solid var(--mont-border, rgba(255, 255, 255, 0.06)) !important;
+  box-shadow: var(--mont-menu-shadow, 0 10px 28px rgba(0, 0, 0, 0.5)) !important;
+  color: var(--mont-text, #ffffff) !important;
+  padding: 6px 4px !important;
+  overflow: visible !important;
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+  -webkit-app-region: no-drag !important;
+}
+
+._3pofGqV0buiKAfMPEs3_82::-webkit-scrollbar {
+  width: 0 !important;
+  height: 0 !important;
+  display: none !important;
+}
+
+._2Lu3d-5qLmW4i19ysTt2jT {
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  -webkit-app-region: no-drag !important;
+}
+
+._3pofGqV0buiKAfMPEs3_82 ._2jXHP0742MyApMUVUM8IFn,
+._2jXHP0742MyApMUVUM8IFn._2uiDecKkKjAq7nimy3uLhG {
+  background: transparent !important;
+  background-color: transparent !important;
+  color: #e8e8e8 !important;
+  border-radius: 999px !important;
+  margin: 1px 2px !important;
+  padding: 6px 12px !important;
+  border: 1px solid transparent !important;
+}
+
+._3pofGqV0buiKAfMPEs3_82 ._2jXHP0742MyApMUVUM8IFn:hover,
+._2jXHP0742MyApMUVUM8IFn._2uiDecKkKjAq7nimy3uLhG:hover {
+  background-color: rgba(255, 255, 255, 0.10) !important;
+  background-image: linear-gradient(
+    165deg,
+    rgba(255, 255, 255, 0.18) 0%,
+    rgba(210, 230, 255, 0.07) 50%,
+    rgba(255, 255, 255, 0.04) 100%
+  ) !important;
+  border: 1px solid rgba(255, 255, 255, 0.20) !important;
+  color: #ffffff !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.28) !important;
+}
+
+._3pofGqV0buiKAfMPEs3_82 ._21GPYlKBCLsHQpTsHw_RL_,
+._2jXHP0742MyApMUVUM8IFn._21GPYlKBCLsHQpTsHw_RL_ {
+  background: rgba(255, 255, 255, 0.10) !important;
+  border: none !important;
+  border-radius: 0 !important;
+  height: 1px !important;
+  min-height: 1px !important;
+  max-height: 1px !important;
+  margin: 3px 10px !important;
+  padding: 0 !important;
+}
+
+/* Root menu bar — clickable, no permanent overlay bridges */
+._3s0lkohH8wU2do0K1il28Y,
+[class*="RootMenuBar"],
+.localmenu {
+  overflow: visible !important;
+  pointer-events: auto !important;
+  -webkit-app-region: no-drag !important;
+  position: relative !important;
+  z-index: 10 !important;
+}
+
+._3s0lkohH8wU2do0K1il28Y > *,
+[class*="RootMenuBar"] > *,
+.localmenu > * {
+  position: relative !important;
+  pointer-events: auto !important;
+  -webkit-app-region: no-drag !important;
+}
+
+/* Store page secondary nav (Browse / Recommendations / …) */
+#store_nav_area,
+.store_nav,
+#store_header,
+.store_header,
+.home_page_body_ctn .store_nav,
+[class*="store_nav"],
+[class*="StoreNav"] {
+  background: #0B0C10 !important;
+  background-color: #0B0C10 !important;
+  background-image: none !important;
+  border-color: rgba(255, 255, 255, 0.06) !important;
+}
+
+#store_nav_area a,
+.store_nav a,
+.tab,
+.tab > span,
+.popup_menu .popup_menu_item {
+  color: #c8c8c8 !important;
+  background: transparent !important;
+}
+
+#store_nav_area a:hover,
+.store_nav a:hover,
+.tab:hover,
+.tab:hover > span,
+.popup_menu .popup_menu_item:hover {
+  color: #ffffff !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+}
+
+/* Search + cart — muted steel instead of Steam blue */
+#store_search_link,
+.store_header_btn_green,
+#cart_status_data,
+a#store_header_cart_btn,
+.store_header_btn {
+  background: #1a1a1a !important;
+  background-color: #1a1a1a !important;
+  background-image: none !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 8px !important;
+  color: #ffffff !important;
+  box-shadow: none !important;
+}
+
+#store_search_link:hover,
+.store_header_btn_green:hover,
+#cart_status_data:hover {
+  background: #252525 !important;
+  border-color: rgba(255, 255, 255, 0.14) !important;
+}
+
+#store_search,
+.searchbox,
+input#store_search {
+  background: #141414 !important;
+  background-color: #141414 !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 8px !important;
+  color: #ffffff !important;
+}
+
+/* ===== MENUS — soft corners on panel; square window hit-box ===== */
+html.ContextMenuPopup,
+body.ContextMenuPopup,
+.ContextMenuPopup,
+._14wqdluDeDnnEcg3OSLEmd {
+  background: var(--mont-bg, #0B0C10) !important;
+  background-color: var(--mont-bg, #0B0C10) !important;
+  background-image: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  color: #ffffff !important;
+  overflow: visible !important;
+  pointer-events: auto !important;
+  border-radius: 0 !important;
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+  -webkit-app-region: no-drag !important;
+}
+
+body.ContextMenuPopup::-webkit-scrollbar,
+.ContextMenuPopup::-webkit-scrollbar,
+._14wqdluDeDnnEcg3OSLEmd::-webkit-scrollbar {
+  width: 0 !important;
+  height: 0 !important;
+  display: none !important;
+}
+
+/* Library + shared context menu shells — soft corners here */
+.PP7LM0Ow1K5qkR8WElLpt,
+._29AJUo6aKT93gX24N5WFj_,
+.BaERlvVMT45z7ZQ-TZiAe,
+.ZmMzAFCxvwjUFR245iuLe,
+._12DEITwNCR63H338pFyoji,
+._2LigNhjmULtkRCXW5237ai,
+._2EstNjFIIZm_WUSKm5Wt7n,
+._2EstN-8zjZkfSbf_tWE9EW,
+.oZw50c4oJ6-r0HP8UWv25,
+._1camoJ7LCeyWF3w4U45aY1,
+._-3DVv7kOvMAm0MuOeJeLT,
+._2lAPEeoftY0p4jbJLcAsZz,
+[class*="contextmenu_"],
+[class*="ContextMenu"],
+[class*="contextMenu"],
+.contextMenu,
+.popup_block,
+.popup_block_new,
+.popup_body,
+.popup_menu,
+.shadow_content,
+.menu,
+.menu_content {
+  background: #0B0C10 !important;
+  background-color: #0B0C10 !important;
+  background-image: none !important;
+  color: #ffffff !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 16px !important;
+  overflow: visible !important;
+  pointer-events: auto !important;
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+  -webkit-app-region: no-drag !important;
+}
+
+.PP7LM0Ow1K5qkR8WElLpt::-webkit-scrollbar,
+._29AJUo6aKT93gX24N5WFj_::-webkit-scrollbar,
+.BaERlvVMT45z7ZQ-TZiAe::-webkit-scrollbar,
+.ZmMzAFCxvwjUFR245iuLe::-webkit-scrollbar,
+._12DEITwNCR63H338pFyoji::-webkit-scrollbar,
+._2LigNhjmULtkRCXW5237ai::-webkit-scrollbar,
+[class*="contextmenu_"]::-webkit-scrollbar,
+[class*="ContextMenu"]::-webkit-scrollbar,
+[class*="contextMenu"]::-webkit-scrollbar,
+.popup_body::-webkit-scrollbar,
+.popup_menu::-webkit-scrollbar,
+.menu_content::-webkit-scrollbar,
+.shadow_content::-webkit-scrollbar {
+  width: 0 !important;
+  height: 0 !important;
+  display: none !important;
+}
+
+.PP7LM0Ow1K5qkR8WElLpt,
+._29AJUo6aKT93gX24N5WFj_,
+.BaERlvVMT45z7ZQ-TZiAe,
+.ZmMzAFCxvwjUFR245iuLe,
+._12DEITwNCR63H338pFyoji,
+._2LigNhjmULtkRCXW5237ai {
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+  border-radius: 16px !important;
+  padding: 4px !important;
+  overflow: visible !important;
+}
+
+/* Steam shadow bridges — invisible but MUST receive hover */
+.shadow_ul,
+.shadow_ur,
+.shadow_bl,
+.shadow_br,
+.shadow_top,
+.shadow_bottom,
+.shadow_left,
+.shadow_right {
+  display: block !important;
+  opacity: 0 !important;
+  visibility: visible !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  pointer-events: auto !important;
+  -webkit-app-region: no-drag !important;
+}
+
+.shadow_top {
+  min-height: 20px !important;
+  height: 20px !important;
+  width: 100% !important;
+}
+
+.shadow_bottom {
+  min-height: 8px !important;
+  height: 8px !important;
+  width: 100% !important;
+}
+
+.shadow_left,
+.shadow_right {
+  min-width: 8px !important;
+  width: 8px !important;
+}
+
+.popup_body,
+.shadow_content,
+.popup_menu,
+.menu_content {
+  pointer-events: auto !important;
+  margin-top: 0 !important;
+  position: relative !important;
+  z-index: 2 !important;
+  background: var(--mont-bg, #0B0C10) !important;
+  background-color: var(--mont-bg, #0B0C10) !important;
+}
+
+/* Floating React menus — no low z-index (must beat ContextMenuMouseOverlay 1599 via parent) */
+.PP7LM0Ow1K5qkR8WElLpt,
+._29AJUo6aKT93gX24N5WFj_,
+.BaERlvVMT45z7ZQ-TZiAe {
+  pointer-events: auto !important;
+  margin-top: 0 !important;
+  background: var(--mont-bg, #0B0C10) !important;
+  background-color: var(--mont-bg, #0B0C10) !important;
+  -webkit-app-region: no-drag !important;
+}
+
+.popup_body,
+.shadow_content {
+  background: #0B0C10 !important;
+  border: none !important;
+  border-radius: 16px !important;
+  padding: 4px !important;
+  min-width: 240px !important;
+  color: #ffffff !important;
+  overflow: visible !important;
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+  -webkit-app-region: no-drag !important;
+}
+
+.popup_body::-webkit-scrollbar,
+.shadow_content::-webkit-scrollbar {
+  width: 0 !important;
+  height: 0 !important;
+  display: none !important;
+}
+
+/* Menu items — compact glass capsules (scoped: never SuperNav labels) */
+._1n7Wloe5jZ6fSuvV18NNWI,
+._34o03-8cUc3fQX1u650c0L,
+._3Gj2wOUvSdrsCfUf7w3k1i,
+._30Cfa_RtfCcvNNH7_LcUON,
+._17CvBVp1rwECBn2FRb4oMA,
+._2jXHP0742MyApMUVUM8IFn,
+[class*="contextmenu_contextMenuItem"],
+[class*="contextMenuItem"],
+[class*="ContextMenuItem"],
+[class*="contextmenu_"] [class*="Item"]:not([class*="Separator"]):not(.hr):not([class*="separator"]),
+.contextMenuItem,
+.popup_menu_item:not(.hr),
+.popup_menu [role="menuitem"],
+.popup_body [role="menuitem"],
+.menu_content [role="menuitem"],
+[class*="contextmenu_"] [role="menuitem"],
+[class*="ContextMenu"] [role="menuitem"],
+._3pofGqV0buiKAfMPEs3_82 [role="menuitem"],
+._3pofGqV0buiKAfMPEs3_82 a {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  color: var(--mont-text, #ffffff) !important;
+  border: 1px solid transparent !important;
+  border-top: 1px solid transparent !important;
+  border-bottom: 1px solid transparent !important;
+  border-radius: var(--mont-radius-pill, 999px) !important;
+  margin: 0 2px !important;
+  padding: 4px 10px !important;
+  width: auto !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  box-sizing: border-box !important;
+  display: flex !important;
+  align-items: center !important;
+  white-space: nowrap !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
+  flex-shrink: 0 !important;
+  transform: none !important;
+  min-height: 0 !important;
+  height: auto !important;
+  line-height: 16px !important;
+  font-size: 13px !important;
+  pointer-events: auto !important;
+  transition:
+    background-color 180ms var(--mont-ease, cubic-bezier(0.22, 1, 0.36, 1)),
+    border-color 180ms var(--mont-ease, cubic-bezier(0.22, 1, 0.36, 1)),
+    box-shadow 180ms var(--mont-ease, cubic-bezier(0.22, 1, 0.36, 1)) !important;
+}
+
+._1n7Wloe5jZ6fSuvV18NNWI:hover,
+._1n7Wloe5jZ6fSuvV18NNWI._18z-3vkWndCBO5WJgFldRK,
+._34o03-8cUc3fQX1u650c0L:hover,
+._3Gj2wOUvSdrsCfUf7w3k1i:hover,
+._30Cfa_RtfCcvNNH7_LcUON:hover,
+._17CvBVp1rwECBn2FRb4oMA:hover,
+._2jXHP0742MyApMUVUM8IFn:hover,
+._18z-3vkWndCBO5WJgFldRK,
+[class*="contextmenu_contextMenuItem"]:hover,
+[class*="contextMenuItem"]:hover,
+[class*="ContextMenuItem"]:hover,
+[class*="contextmenu_"] [class*="Item"]:not([class*="Separator"]):not(.hr):hover,
+.contextMenuItem:hover,
+.popup_menu_item:not(.hr):hover,
+.popup_menu [role="menuitem"]:hover,
+.popup_body [role="menuitem"]:hover,
+.menu_content [role="menuitem"]:hover,
+[class*="contextmenu_"] [role="menuitem"]:hover,
+[class*="ContextMenu"] [role="menuitem"]:hover,
+[role="menuitem"][aria-checked="true"],
+._3pofGqV0buiKAfMPEs3_82 [role="menuitem"]:hover,
+._3pofGqV0buiKAfMPEs3_82 a:hover {
+  background-color: var(--mont-glass-fill, rgba(255, 255, 255, 0.10)) !important;
+  background-image: var(--mont-glass-gradient) !important;
+  border: 1px solid var(--mont-glass-border, rgba(255, 255, 255, 0.22)) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.32) !important;
+  color: var(--mont-text, #ffffff) !important;
+  transform: none !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+}
+
+/* SuperNav safety override — wins over any menu-item / role styles above */
+html body ._3Z3ohQ8-1NKnCZkbS6fvy ._7AlhCx3XGzBeIrQaCneUD,
+html body ._2D64jIEK7wpUR_NlObDW76 ._7AlhCx3XGzBeIrQaCneUD,
+html body.DesktopUI ._7AlhCx3XGzBeIrQaCneUD {
+  flex: 0 0 auto !important;
+  flex-shrink: 0 !important;
+  min-width: max-content !important;
+  max-width: none !important;
+  width: auto !important;
+  height: inherit !important;
+  margin: 0 !important;
+  font-size: 18px !important;
+  line-height: normal !important;
+  white-space: nowrap !important;
+}
+
+html body ._7AlhCx3XGzBeIrQaCneUD:not(._1gqEjB5QsKT_NftD1dEsdZ),
+html body.DesktopUI ._7AlhCx3XGzBeIrQaCneUD:not(._1gqEjB5QsKT_NftD1dEsdZ) {
+  padding: 0 12px !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+}
+
+html body ._7AlhCx3XGzBeIrQaCneUD._1gqEjB5QsKT_NftD1dEsdZ:not(._2cO0HdvLEGAdhosLekWsmo),
+html body.DesktopUI ._7AlhCx3XGzBeIrQaCneUD._1gqEjB5QsKT_NftD1dEsdZ:not(._2cO0HdvLEGAdhosLekWsmo) {
+  padding: 4px 14px !important;
+  margin: 0 2px !important;
+  background-color: var(--mont-glass-fill, rgba(255, 255, 255, 0.10)) !important;
+  background-image: var(--mont-glass-gradient) !important;
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+  border-radius: 999px !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.28) !important;
+}
+
+html body ._7AlhCx3XGzBeIrQaCneUD ._19axKcqYRuaJ8vdYKYmtTQ,
+html body.DesktopUI ._7AlhCx3XGzBeIrQaCneUD ._19axKcqYRuaJ8vdYKYmtTQ {
+  display: inline-block !important;
+  min-width: max-content !important;
+  max-width: none !important;
+  width: auto !important;
+  height: auto !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  font-size: inherit !important;
+  line-height: inherit !important;
+  white-space: nowrap !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+}
+
+/* Separators — thin line only, scoped to menus (never global [class*=separator]) */
+.hr,
+.popup_menu .hr,
+.popup_body .hr,
+.menu .hr,
+.menu_content .hr,
+.shadow_content .hr,
+.WUOrULWKkGLl3ZUQdDXg8,
+.IjIBR_wDDi2N77Oz4KAT4,
+.ixiWPQKqTMxnq43WgT3vj,
+._3aZ0c2fqQokcOP-VpaeLdw,
+._1vghGMeol3sL-MYjgV6Nze,
+._3Bl-84CrJMnKIhikLFI0XV,
+[class*="contextmenu_"] [class*="Separator"],
+[class*="ContextMenu"] [class*="Separator"],
+[class*="contextMenu"] [class*="Separator"],
+.popup_menu [class*="separator"],
+.popup_body [class*="separator"],
+.menu_content [class*="separator"],
+.contextMenuSeparator,
+.popup_menu_item.hr,
+.popup_menu [role="separator"],
+.popup_body [role="separator"],
+[class*="contextmenu_"] [role="separator"] {
+  display: block !important;
+  border: none !important;
+  border-top: none !important;
+  border-bottom: none !important;
+  border-radius: 0 !important;
+  height: 1px !important;
+  min-height: 1px !important;
+  max-height: 1px !important;
+  padding: 0 !important;
+  margin: 3px 10px !important;
+  background: rgba(255, 255, 255, 0.10) !important;
+  background-color: rgba(255, 255, 255, 0.10) !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  flex: 0 0 1px !important;
+  overflow: hidden !important;
+  line-height: 0 !important;
+  font-size: 0 !important;
+  color: transparent !important;
+  pointer-events: none !important;
+}
+
+.WUOrULWKkGLl3ZUQdDXg8 + ._1n7Wloe5jZ6fSuvV18NNWI,
+.hr + ._1n7Wloe5jZ6fSuvV18NNWI,
+.hr + .popup_menu_item,
+[class*="Separator"] + ._1n7Wloe5jZ6fSuvV18NNWI,
+[class*="Separator"] + [role="menuitem"],
+.hr + [role="menuitem"] {
+  border-top: none !important;
+  margin-top: 0 !important;
+  padding-top: 4px !important;
+}
+
+/* ===== Dropdown fields (خانات) — charcoal + soft rounded corners =====
+   Covers: the closed control box AND the open menu panel + its items.
+   Every "field" dropdown gets soft corners (never sharp) and coal charcoal. */
+
+/* Closed control box (the field itself) */
+.DialogDropDown,
+.DialogDropDown._DialogInputContainer,
+._DialogInputContainer.DialogDropDown,
+[class*="DialogDropDown"]:not([class*="Menu"]),
+[class*="dropdown_"][class*="Control"],
+[class*="Dropdown"][class*="Control"],
+[class*="dropDown"]:not([class*="Menu"]),
+select {
+  background: #0f0f0f !important;
+  background-color: #0f0f0f !important;
+  background-image: none !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 12px !important;
+  color: #ffffff !important;
+  box-shadow: none !important;
+  outline: none !important;
+  transition:
+    background-color 180ms var(--mont-ease, cubic-bezier(0.22, 1, 0.36, 1)),
+    border-color 180ms var(--mont-ease, cubic-bezier(0.22, 1, 0.36, 1)) !important;
+}
+
+.DialogDropDown:hover,
+[class*="DialogDropDown"]:not([class*="Menu"]):hover,
+[class*="dropDown"]:not([class*="Menu"]):hover,
+select:hover {
+  background: #161616 !important;
+  background-color: #161616 !important;
+  border-color: rgba(255, 255, 255, 0.16) !important;
+}
+
+.DialogDropDown:focus-within,
+[class*="DialogDropDown"]:not([class*="Menu"]):focus-within {
+  border-color: var(--mont-accent, #45A29E) !important;
+}
+
+/* Open menu panel — colors only; never crush size/position (see Shared/dropdown-fix.css) */
+[class*="dropdown_DialogDropDownMenu"],
+.DialogDropDownMenu,
+.dropDownMenuContainer,
+.DialogMenuPosition {
+  background: #0B0C10 !important;
+  background-color: #0B0C10 !important;
+  background-image: none !important;
+  border: 1px solid rgba(255, 255, 255, 0.07) !important;
+  border-radius: 10px !important;
+  color: #ffffff !important;
+  box-shadow: 0 14px 44px rgba(0, 0, 0, 0.6) !important;
+  overflow: visible !important;
+  padding: 4px !important;
+  min-width: 180px !important;
+  width: max-content !important;
+  transform: none !important;
+}
+
+/* Items inside the open dropdown — soft pill rows, charcoal hover */
+.DialogDropDownMenu_Item,
+[class*="DialogDropDownMenu"] [class*="Item"],
+[class*="DropDownMenu"] [class*="Item"],
+[class*="dropdown_DialogDropDownMenu"] [class*="Item"] {
+  background: transparent !important;
+  background-color: transparent !important;
+  border: 1px solid transparent !important;
+  border-radius: 10px !important;
+  margin: 1px 2px !important;
+  padding: 6px 12px !important;
+  color: #e8e8e8 !important;
+  transition:
+    background-color 160ms var(--mont-ease, cubic-bezier(0.22, 1, 0.36, 1)),
+    border-color 160ms var(--mont-ease, cubic-bezier(0.22, 1, 0.36, 1)) !important;
+}
+
+.DialogDropDownMenu_Item:hover,
+[class*="DialogDropDownMenu"] [class*="Item"]:hover,
+[class*="DropDownMenu"] [class*="Item"]:hover,
+[class*="dropdown_DialogDropDownMenu"] [class*="Item"]:hover {
+  background-color: var(--mont-glass-fill, rgba(255, 255, 255, 0.10)) !important;
+  background-image: var(--mont-glass-gradient) !important;
+  border-color: rgba(255, 255, 255, 0.18) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.24) !important;
+  color: #ffffff !important;
+}
+
+.DialogDropDownMenu_Item.Active,
+[class*="DialogDropDownMenu"] [class*="Item"][class*="Active"],
+[class*="DropDownMenu"] [class*="Item"][class*="Selected"] {
+  background: rgba(107, 124, 146, 0.22) !important;
+  background-color: rgba(107, 124, 146, 0.22) !important;
+  border-radius: 10px !important;
+  color: #ffffff !important;
+}
+
+/* ===== Circular orbit profile (top bar) ===== */
+@keyframes montSpin {
+  to { transform: rotate(360deg); }
+}
+@keyframes montBreath {
+  0%, 100% { opacity: 0.35; }
+  50% { opacity: 0.75; }
+}
+
+._3yD46y5pd3zOGR7CzKs0mC {
+  position: relative !important;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 14px !important;
+  max-height: none !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 4px 10px 4px 8px !important;
+  border-radius: 999px !important;
+}
+
+/* Name + wallet — keep clear of orbit rings */
+._3yD46y5pd3zOGR7CzKs0mC ._11phBiBefcVQdzrnrezkKa,
+._3yD46y5pd3zOGR7CzKs0mC ._2jphjrSifC6orDT4g_7Wd,
+._3yD46y5pd3zOGR7CzKs0mC > span,
+._3yD46y5pd3zOGR7CzKs0mC > div:not(.avatarHolder):not([class*="avatar"]) {
+  margin-left: 4px !important;
+  padding-left: 2px !important;
+  letter-spacing: 0.2px !important;
+}
+
+._3yD46y5pd3zOGR7CzKs0mC.online,
+._3yD46y5pd3zOGR7CzKs0mC ._11phBiBefcVQdzrnrezkKa {
+  color: #66FCF1 !important;
+}
+
+._3yD46y5pd3zOGR7CzKs0mC .avatarHolder {
+  position: relative !important;
+  width: 36px !important;
+  height: 36px !important;
+  min-width: 36px !important;
+  min-height: 36px !important;
+  max-width: 36px !important;
+  max-height: 36px !important;
+  aspect-ratio: 1 / 1 !important;
+  margin-right: 8px !important;
+  border-radius: 50% !important;
+  overflow: visible !important;
+  background: transparent !important;
+  z-index: 1 !important;
+  flex-shrink: 0 !important;
+  flex-grow: 0 !important;
+}
+
+._3yD46y5pd3zOGR7CzKs0mC .avatar {
+  width: 36px !important;
+  height: 36px !important;
+  min-width: 36px !important;
+  min-height: 36px !important;
+  max-width: 36px !important;
+  max-height: 36px !important;
+  aspect-ratio: 1 / 1 !important;
+  border-radius: 50% !important;
+  overflow: hidden !important;
+  border: 2px solid #2a2a2a !important;
+  background: #12141b !important;
+  box-shadow: none !important;
+  flex-shrink: 0 !important;
+}
+
+/* Kill Steam status bar / frame / SVG slab (the weird blue line) */
+._3yD46y5pd3zOGR7CzKs0mC .avatarStatus,
+._3yD46y5pd3zOGR7CzKs0mC [class*="avatarStatus"],
+._3yD46y5pd3zOGR7CzKs0mC [class*="AvatarStatus"],
+._3yD46y5pd3zOGR7CzKs0mC [class*="avatar_status"],
+._3yD46y5pd3zOGR7CzKs0mC [class*="AvatarFrame"],
+._3yD46y5pd3zOGR7CzKs0mC [class*="avatarFrame"],
+._3yD46y5pd3zOGR7CzKs0mC [class*="avatarFrame"],
+._3yD46y5pd3zOGR7CzKs0mC [class*="persona_status"],
+._3yD46y5pd3zOGR7CzKs0mC [class*="PersonaStatus"],
+._3yD46y5pd3zOGR7CzKs0mC [class*="statusIcon"],
+._3yD46y5pd3zOGR7CzKs0mC [class*="StatusIcon"],
+._3yD46y5pd3zOGR7CzKs0mC .avatarHolder > div:not(.avatar):not([class*="avatar"]):not([class*="Avatar"]),
+._3yD46y5pd3zOGR7CzKs0mC .avatarHolder > span,
+._3yD46y5pd3zOGR7CzKs0mC .avatarHolder > svg,
+._3yD46y5pd3zOGR7CzKs0mC .avatar > svg {
+  display: none !important;
+  opacity: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  overflow: hidden !important;
+}
+
+._3yD46y5pd3zOGR7CzKs0mC .avatar img,
+._3yD46y5pd3zOGR7CzKs0mC .avatarHolder img {
+  border-radius: 50% !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  aspect-ratio: 1 / 1 !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  display: block !important;
+}
+
+/* Global: force circular avatars (never oval) */
+.avatarHolder,
+.avatar,
+[class*="avatarHolder"],
+[class*="AvatarHolder"],
+[class*="playerAvatar"],
+[class*="PlayerAvatar"],
+[class*="steamavatar"],
+.mediumHolder,
+.smallHolder,
+.largeHolder {
+  aspect-ratio: 1 / 1 !important;
+  border-radius: 50% !important;
+  flex-shrink: 0 !important;
+}
+
+.avatar img,
+.avatarHolder img,
+[class*="avatar"] img,
+[class*="Avatar"] img,
+[class*="playerAvatar"] img,
+.mediumHolder img,
+.smallHolder img,
+.largeHolder img {
+  width: 100% !important;
+  height: 100% !important;
+  aspect-ratio: 1 / 1 !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+}
+
+/* Soft full ring + spinning arc — blue */
+._3yD46y5pd3zOGR7CzKs0mC .avatarHolder::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: -5px !important;
+  border-radius: 50% !important;
+  border: 1.5px solid rgba(76, 180, 255, 0.4) !important;
+  box-shadow: 0 0 12px rgba(76, 180, 255, 0.45) !important;
+  animation: montBreath 3.2s ease-in-out infinite !important;
+  pointer-events: none !important;
+  z-index: 0 !important;
+}
+
+._3yD46y5pd3zOGR7CzKs0mC .avatarHolder::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: -3px !important;
+  border-radius: 50% !important;
+  border: 1.5px solid rgba(76, 180, 255, 0.15) !important;
+  border-top-color: var(--mont-online-ring, #66FCF1) !important;
+  border-right-color: rgba(76, 180, 255, 0.55) !important;
+  animation: montSpin 3.4s linear infinite !important;
+  pointer-events: none !important;
+  z-index: 3 !important;
+}
+
+/* No outer button ring — it was reading as a blue bar beside the avatar */
+._3yD46y5pd3zOGR7CzKs0mC::before,
+._3yD46y5pd3zOGR7CzKs0mC::after {
+  content: none !important;
+  display: none !important;
+}
+
+._3yD46y5pd3zOGR7CzKs0mC.online .avatar {
+  box-shadow: none !important;
+  border-color: rgba(76, 180, 255, 0.35) !important;
+}
+
+._3yD46y5pd3zOGR7CzKs0mC:hover .avatarHolder::before {
+  animation-duration: 1.4s !important;
+  border-top-color: #66FCF1 !important;
+  border-right-color: rgba(103, 193, 245, 0.7) !important;
+  border-color: rgba(76, 180, 255, 0.25) !important;
+}
+
+._3yD46y5pd3zOGR7CzKs0mC:hover .avatar {
+  border-color: rgba(76, 180, 255, 0.55) !important;
+}
+
+._3yD46y5pd3zOGR7CzKs0mC:hover {
+  background: transparent !important;
+}
+
+/* ===== Library switch animations — glass bubble navigation ===== */
+@keyframes montFadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes montSlideIn {
+  from { opacity: 0; transform: translateX(14px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* Glass "bubble" pop — content rises + swells like a bubble surfacing */
+@keyframes montBubbleIn {
+  0% {
+    opacity: 0;
+    transform: translateY(16px) scale(0.965);
+    filter: blur(6px);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-3px) scale(1.008);
+    filter: blur(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+/* Bubble sheen sweeping across the active nav pill on switch */
+@keyframes montBubbleSheen {
+  0% { transform: translateX(-120%) skewX(-18deg); opacity: 0; }
+  30% { opacity: 0.6; }
+  100% { transform: translateX(220%) skewX(-18deg); opacity: 0; }
+}
+
+._2Dd4T78PcCTUVgOtDGFY5j,
+._2g5K_hJWc7jVo81zuejhk2,
+._2gSXCB6PbOlMxslr8hm6dm {
+  animation: montBubbleIn 440ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+._2l416KfEtI4CL0mCUEmOBw {
+  animation: montSlideIn 380ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Active SuperNav pill — glassy bubble sheen sweeps on activation */
+._7AlhCx3XGzBeIrQaCneUD._1gqEjB5QsKT_NftD1dEsdZ:not(._2cO0HdvLEGAdhosLekWsmo) {
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+._7AlhCx3XGzBeIrQaCneUD._1gqEjB5QsKT_NftD1dEsdZ:not(._2cO0HdvLEGAdhosLekWsmo)::before {
+  content: "" !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 45% !important;
+  height: 100% !important;
+  pointer-events: none !important;
+  background: linear-gradient(
+    100deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.35) 50%,
+    rgba(255, 255, 255, 0) 100%
+  ) !important;
+  animation: montBubbleSheen 900ms cubic-bezier(0.22, 1, 0.36, 1) both !important;
+  z-index: 0 !important;
+}
+
+/* Keep the active tab label above the sheen sweep */
+._7AlhCx3XGzBeIrQaCneUD._1gqEjB5QsKT_NftD1dEsdZ:not(._2cO0HdvLEGAdhosLekWsmo) ._19axKcqYRuaJ8vdYKYmtTQ {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+._17uEBe5Ri8TMsnfELvs8-N,
+._3Sb2o_mQ30IDRh0C72QUUu {
+  margin-bottom: 18px !important;
+  padding: 4px 8px !important;
+}
+
+._3Sb2o_mQ30IDRh0C72QUUu > * {
+  transition: transform 220ms cubic-bezier(0.22, 1, 0.36, 1) !important;
+  filter: none !important;
+}
+
+._1UBpAXP408Ez_L_mXhW5Q9,
+._3pSPluBgf0NeR1kkCLWMhR {
+  transition:
+    background-color 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 220ms cubic-bezier(0.22, 1, 0.36, 1) !important;
+  filter: none !important;
+}
+
+/* Opacity-only dialog fade — transform breaks position:fixed dropdowns */
+@keyframes montDialogFadeSafe {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.DialogContent,
+.ModalPosition_Content {
+  animation: montDialogFadeSafe 160ms ease both !important;
+  transform: none !important;
+  filter: none !important;
+}
+
+/* ===== Shell cohesion (main UI) ===== */
+body:not(.ModalDialogPopup):not(.FullModalOverlay):not(.ContextMenuPopup),
+.DesktopUI,
+.fullheight,
+#SteamDesktop,
+[class*="steamdesktop_TitleBar"],
+[class*="TitleBar"] {
+  background: var(--mont-bg, #0B0C10) !important;
+  background-color: var(--mont-bg, #0B0C10) !important;
+  background-image: none !important;
+}
+
+.ModalDialogPopup .DialogContent,
+.ModalPosition_Content,
+.DialogBody,
+.DialogHeader,
+.DialogFooter {
+  background: #12141b !important;
+  background-color: #12141b !important;
+  background-image: none !important;
+}
+
+/* Soft cards only — same family, not a different hue */
+._7EGqd8bdiXJBd2fj5Hh8r,
+._31ptFGGMZrSQc5BCX1e5lm,
+._5uvIN6jXDXzzck59F-nhv,
+._3eVREaIAGyRjbf0bkFjR9Y,
+._1VNuYHM6BPBOJspC6zPf5r,
+._12vo5L1hsNGdao6_ssuirS,
+._20QAC4WMXm8qFE8waUT5oo .vCCmYvn9yQ_V8CpKupllU {
+  background: #12141b !important;
+  background-color: #12141b !important;
+  border-color: rgba(255, 255, 255, 0.06) !important;
+}
+
+/* Kill leftover Steam blue/grey washes */
+[class*="gradient"],
+.library_ContainerBackground_2qL2p,
+._3x1HklzyDs4TEjACrRO2tB [class*="Background"] {
+  background-image: none !important;
+}
+
+/* Downloads UI — one flat black surface, no seams */
+[class*="DownloadPage"],
+[class*="downloadpage"],
+[class*="DownloadsPage"],
+[class*="downloadlist"],
+[class*="DownloadGameRow"],
+[class*="downloadgame"],
+[class*="DownloadsWindow"],
+[class*="downloads_"] {
+  background: #0B0C10 !important;
+  background-color: #0B0C10 !important;
+  background-image: none !important;
+  border-color: rgba(255, 255, 255, 0.06) !important;
+  color: #ffffff !important;
+  box-shadow: none !important;
+}
+
+[class*="Download"] [class*="Row"],
+[class*="download"] [class*="Row"],
+[class*="Download"] [class*="Item"],
+[class*="download"] [class*="Item"],
+[class*="DownloadGameRow"],
+[class*="downloadgame"] {
+  background: #12141b !important;
+  background-color: #12141b !important;
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+  border-radius: 12px !important;
+  box-shadow: none !important;
+  margin: 6px 8px !important;
+}
+
+[class*="Download"] [class*="Progress"],
+[class*="download"] [class*="Progress"],
+[class*="ProgressBar"],
+[class*="progressBar"] {
+  background: #161616 !important;
+  border-radius: 999px !important;
+  overflow: hidden !important;
+}
+
+[class*="Download"] [class*="Progress"] > *,
+[class*="download"] [class*="Progress"] > *,
+[class*="ProgressBar"] > *,
+[class*="progressBar"] > div {
+  background: #45A29E !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+/* Backdrop behind dialogs — NOT solid black; keep Steam visible */
+body.FullModalOverlay,
+.FullModalOverlay,
+.ModalOverlayContent,
+.ModalOverlayBackground,
+[class*="ModalOverlayBackground"],
+[class*="modaloverlay_"],
+[class*="ModalOverlay"][class*="Darken"],
+[class*="Dimmer"] {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+/* Popup window chrome around dialog — transparent, not a black void */
+body.ModalDialogPopup,
+html.ModalDialogPopup {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+/* Soft dim only (see library behind) */
+.FullModalOverlay [class*="Overlay"],
+.ModalOverlayContent > div:first-child,
+[class*="ModalOverlay"][class*="Background"] {
+  background: rgba(0, 0, 0, 0.4) !important;
+  background-color: rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Dialog panel itself — dark card + soft corners */
+.ModalPosition,
+.ModalPosition_Content,
+.DialogContent,
+.DialogContentTransition,
+.DialogBody,
+.DialogHeader,
+.DialogFooter,
+.DialogAside,
+.DialogControlsSection,
+.DialogTwoColLayout {
+  background: #12141b !important;
+  background-color: #12141b !important;
+  background-image: none !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  color: #ffffff !important;
+}
+
+.ModalPosition,
+.ModalPosition_Content,
+.DialogContent,
+.DialogContentTransition {
+  border-radius: 20px !important;
+  overflow: visible !important;
+  transform: none !important;
+}
+
+div.ModalPosition_TopBar,
+.ModalPosition_TopBar {
+  display: none !important;
+  height: 0 !important;
+  background: transparent !important;
+}
+
+/* Install drive row / bright Steam blue → muted steel */
+.DialogBody [class*="selected"],
+.DialogBody [class*="Selected"],
+.DialogBody [class*="Highlight"],
+.DialogBody [class*="active"],
+.DialogContent [class*="Drive"],
+.DialogContent [class*="install"] {
+  background: rgba(107, 124, 146, 0.28) !important;
+  background-color: rgba(107, 124, 146, 0.28) !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  color: #ffffff !important;
+}
+
+/* Selection / highlight rows — muted steel, never Steam blue */
+[class*="selected"]:not(input):not(option),
+[class*="Selected"]:not(input):not(option),
+[class*="Active"]:not(a):not(button),
+.DialogDropDownMenu_Item.Active,
+.DialogMenuPosition .active {
+  background: rgba(107, 124, 146, 0.22) !important;
+  background-color: rgba(107, 124, 146, 0.22) !important;
+  background-image: none !important;
+  color: #ffffff !important;
+  box-shadow: none !important;
+}
+
+/* Checkboxes / toggles — no bright blue */
+.DialogCheckbox,
+.DialogCheckbox .check,
+input[type="checkbox"] {
+  accent-color: #45A29E !important;
+}
+
+button.DialogButton,
+button.DialogButton.Primary,
+.DialogButton.Primary {
+  border-radius: 12px !important;
+  box-shadow: none !important;
+}
+
+button.DialogButton.Primary,
+.DialogButton.Primary {
+  background: #2f6fad !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(120, 180, 240, 0.35) !important;
+}
+
+button.DialogButton {
+  background: #161616 !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+}
+
+/* Kill classic Steam blue fills if they leak as inline-ish classes */
+[style*="rgb(26, 159, 255)"],
+[style*="rgb(102, 192, 244)"],
+[style*="#1a9fff"],
+[style*="#66c0f4"],
+[style*="#1A9FFF"],
+[style*="#66C0F4"] {
+  background: rgba(107, 124, 146, 0.22) !important;
+  background-color: rgba(107, 124, 146, 0.22) !important;
+  background-image: none !important;
+}
+
+/* ===== Notifications dropdown (bell panel) ===== */
+._1UgM1Pm8SbTWX7_2f-crGt,
+._2m6H7Jmk-G-Nrbif_wDoTx,
+._3sTMvhkGXqBzwhsP2-IA5P,
+.MCa4RMSvWJwwWjcZP2wTT,
+.p2CKe5nuC_8YgWL_lZbNn,
+.UmtNgXD92RoDeYjxKEskk {
+  background: #121212 !important;
+  background-color: #121212 !important;
+  background-image: none !important;
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.06) !important;
+  box-shadow: none !important;
+}
+
+._1UgM1Pm8SbTWX7_2f-crGt {
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+  border-radius: 12px !important;
+}
+
+.MCa4RMSvWJwwWjcZP2wTT,
+._3zQLPuC3M-NPNa1tVda9Dz {
+  color: #ffffff !important;
+}
+
+/* View All button */
+._1oERP7bVictkby2hP4BBva,
+.MCa4RMSvWJwwWjcZP2wTT ._1oERP7bVictkby2hP4BBva {
+  background: #252525 !important;
+  background-color: #252525 !important;
+  color: #ffffff !important;
+  border: none !important;
+  border-radius: 8px !important;
+}
+
+._1oERP7bVictkby2hP4BBva:hover,
+.MCa4RMSvWJwwWjcZP2wTT ._1oERP7bVictkby2hP4BBva:hover {
+  background: #323232 !important;
+  background-color: #323232 !important;
+  color: #ffffff !important;
+}
+
+/* Unread / notification rows (default Steam #323640 / #3d4450) */
+._1YAQHDHv4hsPaauccvAFtn,
+._1B1XTNsfuwOaDPAkkr8M42,
+._2kLHZTRgRl0POZfXPcfxks,
+._1X5wHQgKhsyFOBfnka56DP,
+._3-H47wPl1Ng3lh7xGZOPIg,
+._2h6KD6p6y4vIgO2Toxx-_K,
+._1k275cE1gk-jpZE5r-37zl,
+._5HZT7qE6px0VNOBQ7q6Nz,
+._2yhmcyeUOyM8lt__Skbk9O,
+._30fVm4Rsel-4nUKEiPJgz9,
+._1lqXpJpRlYvyM2fBx6beHd,
+._1hFrV3_0BponiGRcGE_jg3,
+._1GcAugE5c4nbBUwrA4_xwS,
+._3B8wRA4H7e_oSksYNqpSPv,
+._2uW9K6fqc6jZX1XBjnLjw,
+.jD4XY_gqDiLlX0jZqK1MA,
+._1xvIUtLkTrdEk2Ob1MqFcQ,
+.QFW0BtI4l77AFmv1xLAkx,
+.d9RJTj9G8qU-U9-he2cQx,
+._3Ak7cNRtzpDWtFgnn6n0-J,
+._3zfQA8bEKpisPtsyT4SovP,
+[class*="StandardTemplate"],
+[class*="AllNotificationsTemplate"],
+[class*="SteamNotification"] {
+  background: #1a1a1a !important;
+  background-color: #1a1a1a !important;
+  background-image: none !important;
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+  border-radius: 10px !important;
+  color: #ffffff !important;
+  box-shadow: none !important;
+}
+
+._1YAQHDHv4hsPaauccvAFtn:hover,
+._1B1XTNsfuwOaDPAkkr8M42:hover,
+._2kLHZTRgRl0POZfXPcfxks:hover,
+._1X5wHQgKhsyFOBfnka56DP:hover,
+._3-H47wPl1Ng3lh7xGZOPIg:hover,
+._2h6KD6p6y4vIgO2Toxx-_K:hover,
+._1k275cE1gk-jpZE5r-37zl:hover,
+._5HZT7qE6px0VNOBQ7q6Nz:hover,
+._2yhmcyeUOyM8lt__Skbk9O:hover,
+._30fVm4Rsel-4nUKEiPJgz9:hover,
+._1lqXpJpRlYvyM2fBx6beHd:hover,
+._1hFrV3_0BponiGRcGE_jg3:hover,
+._3zfQA8bEKpisPtsyT4SovP:hover,
+[class*="StandardTemplate"]:hover,
+[class*="AllNotificationsTemplate"]:hover {
+  background: #252525 !important;
+  background-color: #252525 !important;
+  background-image: none !important;
+  color: #ffffff !important;
+}
+
+/* Read / marked rows stay quiet charcoal */
+._15_E6efeCt2NTqCgUKav1W,
+.FMwg5OFGT6NP3h3EW89IP,
+.Wu9rtfDDzG6xfABpqX6oN,
+._1paPuAH6aCXNKdXvf5jv1d,
+._3eZECZ7BxfGeq4yfoKHDal,
+.ULHzVL1tuahqUcVisVW-P {
+  background: #141414 !important;
+  background-color: #141414 !important;
+  background-image: none !important;
+  color: #c8c8c8 !important;
+}
+
+._2uHOsFCB_RZYZFsMQiw28v,
+.cam5nVZiJHP17RZlbXzmE {
+  color: #b8b8be !important;
+}
+
+/* ===== Steam Settings dialog — unify navy → black ===== */
+html body._33vqr13-jdnjTkKKTh414f,
+html body ._33vqr13-jdnjTkKKTh414f,
+html body ._3few7361SOf4k_YuKCmM62,
+html body .aFxOaYcllWYkCfVYQJFs0,
+html body ._5FicoanuNlrOvwQ3dkOVm,
+body.ModalDialogPopup ._33vqr13-jdnjTkKKTh414f,
+body.ModalDialogPopup ._3few7361SOf4k_YuKCmM62 {
+  background: #0B0C10 !important;
+  background-color: #0B0C10 !important;
+  background-image: none !important;
+  color: #ffffff !important;
+  --systemAccentColor: #45A29E !important;
+  --accent: #45A29E !important;
+  --color-focus: #45A29E !important;
+  --gpColor-Blue: #66FCF1 !important;
+}
+
+/* Sidebar column */
+html body ._1d6VIquCc410kNE7rDAje6,
+html body .gNwozyl1BAcDyyhUKvx1Y,
+body.ModalDialogPopup ._1d6VIquCc410kNE7rDAje6 {
+  background: #121212 !important;
+  background-color: #121212 !important;
+  background-image: none !important;
+  border-color: rgba(255, 255, 255, 0.06) !important;
+  color: #c8c8c8 !important;
+}
+
+/* Main content pane */
+html body .CFTLX2wIKOK3hNV-fS7_V,
+html body .DesktopUI .CFTLX2wIKOK3hNV-fS7_V,
+html body .CFTLX2wIKOK3hNV-fS7_V.DesktopUI,
+html body ._3mgb-3_dHk3POEOVOh0Dvp,
+html body .ZjHHXZlnZhCahNrBFplWc {
+  background: #0B0C10 !important;
+  background-color: #0B0C10 !important;
+  background-image: none !important;
+  color: #ffffff !important;
+}
+
+/* STEAM SETTINGS title — kill Millennium/Steam bright blue */
+html body ._3aOHbtFJ8uSR7XH0WFQ8vv,
+html body ._1d6VIquCc410kNE7rDAje6 ._3aOHbtFJ8uSR7XH0WFQ8vv,
+body.ModalDialogPopup ._3aOHbtFJ8uSR7XH0WFQ8vv,
+html body ._3aOHbtFJ8uSR7XH0WFQ8vv * {
+  color: #c8c8c8 !important;
+  -webkit-text-fill-color: #c8c8c8 !important;
+  background: transparent !important;
+  background-image: none !important;
+}
+
+/* Nav items + active blue bar */
+html body ._2mL2HfT5AkDXRi1YBnRWKa,
+body.ModalDialogPopup ._2mL2HfT5AkDXRi1YBnRWKa {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  color: #c8c8c8 !important;
+  border: none !important;
+  border-left: 2px solid transparent !important;
+  box-shadow: none !important;
+}
+
+html body ._2mL2HfT5AkDXRi1YBnRWKa:hover {
+  background: #1a1a1a !important;
+  background-color: #1a1a1a !important;
+  background-image: none !important;
+  color: #ffffff !important;
+}
+
+html body ._2mL2HfT5AkDXRi1YBnRWKa._1ELdDY5kb5jxjXe-FpWBo5,
+html body ._2mL2HfT5AkDXRi1YBnRWKa:focus,
+html body ._1ELdDY5kb5jxjXe-FpWBo5._2mL2HfT5AkDXRi1YBnRWKa,
+body.ModalDialogPopup ._2mL2HfT5AkDXRi1YBnRWKa._1ELdDY5kb5jxjXe-FpWBo5 {
+  background: #1a1a1a !important;
+  background-color: #1a1a1a !important;
+  background-image: none !important;
+  color: #ffffff !important;
+  border: none !important;
+  border-left: 2px solid #45A29E !important;
+  box-shadow: none !important;
+}
+
+html body ._2mL2HfT5AkDXRi1YBnRWKa ._4niDTAfIpKQoRx-CR_3K,
+html body ._2mL2HfT5AkDXRi1YBnRWKa ._3f2IOwoVFEcJNNmmRXIMK8,
+html body ._2mL2HfT5AkDXRi1YBnRWKa svg {
+  color: inherit !important;
+  fill: currentColor !important;
+}
+
+html body ._2mL2HfT5AkDXRi1YBnRWKa._1ELdDY5kb5jxjXe-FpWBo5 ._4niDTAfIpKQoRx-CR_3K,
+html body ._2mL2HfT5AkDXRi1YBnRWKa._1ELdDY5kb5jxjXe-FpWBo5 ._3f2IOwoVFEcJNNmmRXIMK8,
+html body ._2mL2HfT5AkDXRi1YBnRWKa._1ELdDY5kb5jxjXe-FpWBo5 svg {
+  color: #ffffff !important;
+  fill: #ffffff !important;
+}
+
+/* Kill leftover Steam blue gradient accents in settings nav */
+html body ._1d6VIquCc410kNE7rDAje6 [style*="1a9fff"],
+html body ._1d6VIquCc410kNE7rDAje6 [style*="1999ff"],
+html body ._1d6VIquCc410kNE7rDAje6 [style*="26, 159, 255"] {
+  background: #1a1a1a !important;
+  background-image: none !important;
+  border-color: #45A29E !important;
+  color: #ffffff !important;
+}
+
+/* Info rows / fields (Friend Code, Email, VAC…) — was #23262e */
+.eKmEXJCm_lgme24Fp_HWt._2CCdODv0vfzOMrEBUzZwfI,
+._2CCdODv0vfzOMrEBUzZwfI,
+.eKmEXJCm_lgme24Fp_HWt,
+._1axoiZsC1RBp22JQmxiBIc,
+.LOeGvMJsCWqzYJ_LwvLfe,
+.O7cW3FbZwmFjlnkBXHSAc,
+[class*="PagedSettingsDialog"] [class*="Field"],
+[class*="SettingsDialog"] [class*="Field"],
+[class*="settings_"] [class*="Field"] {
+  background: #161616 !important;
+  background-color: #161616 !important;
+  background-image: none !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+  border-radius: 10px !important;
+  color: #ffffff !important;
+  box-shadow: none !important;
+}
+
+.eKmEXJCm_lgme24Fp_HWt:hover,
+._2CCdODv0vfzOMrEBUzZwfI:hover,
+._1axoiZsC1RBp22JQmxiBIc:hover,
+.LOeGvMJsCWqzYJ_LwvLfe:hover {
+  background: #1c1c1c !important;
+  background-color: #1c1c1c !important;
+}
+
+/* Buttons inside settings rows */
+._33vqr13-jdnjTkKKTh414f button.DialogButton,
+._3few7361SOf4k_YuKCmM62 button.DialogButton,
+.CFTLX2wIKOK3hNV-fS7_V button.DialogButton,
+._33vqr13-jdnjTkKKTh414f .DialogButton {
+  background: #252525 !important;
+  background-color: #252525 !important;
+  background-image: none !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+  border-radius: 10px !important;
+  box-shadow: none !important;
+}
+
+._33vqr13-jdnjTkKKTh414f button.DialogButton:hover,
+._3few7361SOf4k_YuKCmM62 button.DialogButton:hover,
+.CFTLX2wIKOK3hNV-fS7_V button.DialogButton:hover {
+  background: #323232 !important;
+  background-color: #323232 !important;
+}
+
+/* Soften bright Steam blue text accents inside settings */
+._12zBmIktqPpcwJXItTb8f9,
+._33vqr13-jdnjTkKKTh414f a,
+.CFTLX2wIKOK3hNV-fS7_V a {
+  color: #66FCF1 !important;
+}
+
+/* ===== Account switcher (Who's playing?) ===== */
+@keyframes montAccIn {
+  from { opacity: 0; transform: translateY(8px) scale(0.96); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.VZ6x_grhNkIYJG__jEEyp,
+.VZ6x_grhNkIYJG__jEEyp._1NBr0Hdw3P-7Q6P5UXs96Y,
+.DesktopUI .VZ6x_grhNkIYJG__jEEyp,
+.DesktopUI .VZ6x_grhNkIYJG__jEEyp._1NBr0Hdw3P-7Q6P5UXs96Y,
+._27A5ub1QLLIMmgywKVMg4z,
+._29VQq5eE-j95L-SafIOc1T,
+._1Tsmp8q3Beodvix_OSedxk,
+._2AzA5jDyoM6tuEy24KKCVC {
+  background: #0B0C10 !important;
+  background-color: #0B0C10 !important;
+  background-image: none !important;
+  animation: none !important;
+  box-shadow: none !important;
+}
+
+._2OLQBEFErC3eaxHeD7--LU,
+._3IMA7pkt2GXbDp4p2tDT8S,
+._2YAErBn5Bipgh6K9SGIQwH { color: #ffffff !important; }
+._3iVOCDb8eFFTeqiopupsej {
+  color: #f0f0f0 !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  margin-top: 8px !important;
+  max-width: 88px !important;
+  text-align: center !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+}
+._1448SH49Bc8Zr5Bzzc5qkt,
+._2zt2wrGbVqFloZNQ4S8vur {
+  color: #7a7a7a !important;
+  font-size: 11px !important;
+  max-width: 88px !important;
+  text-align: center !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+}
+
+._2E_ejdBSC79L4iDC4FAMHY,
+._3v6WnuVNx1rJx0x_1AAyPp {
+  width: auto !important;
+  min-width: 160px !important;
+  height: 44px !important;
+  overflow: visible !important;
+  flex-shrink: 0 !important;
+  clip-path: none !important;
+}
+._2E_ejdBSC79L4iDC4FAMHY svg,
+._3v6WnuVNx1rJx0x_1AAyPp svg {
+  width: auto !important;
+  max-width: none !important;
+  height: 100% !important;
+  overflow: visible !important;
+}
+
+._3SxgWhoEWiasRtCutBmix- {
+  gap: 14px !important;
+  overflow: visible !important;
+  padding: 10px 16px 6px !important;
+  justify-content: center !important;
+  flex-wrap: nowrap !important;
+  background: transparent !important;
+}
+
+.l_0WJ2pzm_5Zp7gfT_UZz,
+._1mt2mPMVEDfpOhhWePy9hc {
+  animation: montAccIn 0.35s cubic-bezier(0.22, 1, 0.36, 1) both !important;
+  overflow: visible !important;
+  flex: 0 0 72px !important;
+  width: 72px !important;
+  max-width: 72px !important;
+  min-width: 72px !important;
+}
+
+html body .l_0WJ2pzm_5Zp7gfT_UZz ._3nhzM2H8Opkomzs5OG5oux,
+html body.DesktopUI .l_0WJ2pzm_5Zp7gfT_UZz ._3nhzM2H8Opkomzs5OG5oux,
+.l_0WJ2pzm_5Zp7gfT_UZz ._3nhzM2H8Opkomzs5OG5oux,
+html body ._1mt2mPMVEDfpOhhWePy9hc .IfVUbt19eXIqaAuGh2i63,
+._1mt2mPMVEDfpOhhWePy9hc .IfVUbt19eXIqaAuGh2i63 {
+  width: 64px !important;
+  height: 64px !important;
+  min-width: 64px !important;
+  min-height: 64px !important;
+  max-width: 64px !important;
+  max-height: 64px !important;
+  aspect-ratio: 1 / 1 !important;
+  border-radius: 50% !important;
+  overflow: hidden !important;
+  border: 2px solid #2c2c2c !important;
+  background: #121212 !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45) !important;
+  transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.28s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.22s ease !important;
+}
+
+html body .l_0WJ2pzm_5Zp7gfT_UZz ._3nhzM2H8Opkomzs5OG5oux > img,
+.l_0WJ2pzm_5Zp7gfT_UZz ._3nhzM2H8Opkomzs5OG5oux > img,
+._3SxgWhoEWiasRtCutBmix- img {
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  display: block !important;
+}
+
+html body .l_0WJ2pzm_5Zp7gfT_UZz:hover ._3nhzM2H8Opkomzs5OG5oux,
+.l_0WJ2pzm_5Zp7gfT_UZz:hover ._3nhzM2H8Opkomzs5OG5oux,
+.l_0WJ2pzm_5Zp7gfT_UZz:focus-within ._3nhzM2H8Opkomzs5OG5oux {
+  transform: translateY(-5px) scale(1.04) !important;
+  border-color: #c8c8c8 !important;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.5) !important;
+}
+
+html body .l_0WJ2pzm_5Zp7gfT_UZz._26_C5yo_aJeYJo2yIV90ls ._3nhzM2H8Opkomzs5OG5oux,
+.l_0WJ2pzm_5Zp7gfT_UZz._26_C5yo_aJeYJo2yIV90ls ._3nhzM2H8Opkomzs5OG5oux {
+  border-color: #66FCF1 !important;
+  box-shadow: 0 0 0 2px rgba(76, 180, 255, 0.22), 0 10px 22px rgba(0, 0, 0, 0.5) !important;
+  transform: translateY(-5px) scale(1.04) !important;
+}
+
+.l_0WJ2pzm_5Zp7gfT_UZz:hover ._3iVOCDb8eFFTeqiopupsej,
+.l_0WJ2pzm_5Zp7gfT_UZz._26_C5yo_aJeYJo2yIV90ls ._3iVOCDb8eFFTeqiopupsej,
+.l_0WJ2pzm_5Zp7gfT_UZz:hover ._1448SH49Bc8Zr5Bzzc5qkt,
+.l_0WJ2pzm_5Zp7gfT_UZz._26_C5yo_aJeYJo2yIV90ls ._1448SH49Bc8Zr5Bzzc5qkt {
+  opacity: 1 !important;
+  z-index: 3 !important;
+}
+
+/* ===== STABILITY LOCK (4.2.0) — interactive chrome always clickable ===== */
+#SteamDesktop,
+.DesktopUI,
+.fullheight,
+[class*="steamdesktop_"],
+[class*="TitleBar"],
+[class*="titlebar"],
+._3s0lkohH8wU2do0K1il28Y,
+._3Z3ohQ8-1NKnCZkbS6fvy,
+._2D64jIEK7wpUR_NlObDW76,
+._3vCzSrrXZzZjVJFZNg9SGu,
+[class*="BottomBar"],
+[class*="bottombar_"],
+[class*="DownloadsBar"] {
+  pointer-events: auto !important;
+}
+
+._3vCzSrrXZzZjVJFZNg9SGu,
+._3vCzSrrXZzZjVJFZNg9SGu *,
+[class*="BottomBar"],
+[class*="BottomBar"] *,
+[class*="DownloadsBar"],
+[class*="DownloadsBar"] * {
+  -webkit-app-region: no-drag !important;
+  pointer-events: auto !important;
+}
+
+/* Never let decorative pseudos steal clicks in library shelves */
+[class*="libraryhome_"]::before,
+[class*="libraryhome_"]::after,
+[class*="Shelf"]::before,
+[class*="Shelf"]::after,
+._2-O4ZG0KrnSrzISHBKctFQ::before,
+#mont-nav-glass {
+  pointer-events: none !important;
+}
+`
+
+/* ===== FINAL SuperNav cleanup — wins over legacy gray boxes ===== */
+html body ._7AlhCx3XGzBeIrQaCneUD,
+html body.DesktopUI ._7AlhCx3XGzBeIrQaCneUD,
+html body ._7AlhCx3XGzBeIrQaCneUD:not(._1gqEjB5QsKT_NftD1dEsdZ),
+html body.DesktopUI ._7AlhCx3XGzBeIrQaCneUD:not(._1gqEjB5QsKT_NftD1dEsdZ),
+html body ._7AlhCx3XGzBeIrQaCneUD:hover:not(._1gqEjB5QsKT_NftD1dEsdZ):not(._2cO0HdvLEGAdhosLekWsmo) {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  padding: 0 14px !important;
+  margin: 0 !important;
+  height: 32px !important;
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.04em !important;
+  text-transform: uppercase !important;
+}
+html body ._7AlhCx3XGzBeIrQaCneUD._1gqEjB5QsKT_NftD1dEsdZ:not(._2cO0HdvLEGAdhosLekWsmo),
+html body.DesktopUI ._7AlhCx3XGzBeIrQaCneUD._1gqEjB5QsKT_NftD1dEsdZ:not(._2cO0HdvLEGAdhosLekWsmo) {
+  background: transparent !important;
+  background-image: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  padding: 0 14px !important;
+  margin: 0 !important;
+  overflow: visible !important;
+}
+html body ._7AlhCx3XGzBeIrQaCneUD._1gqEjB5QsKT_NftD1dEsdZ:not(._2cO0HdvLEGAdhosLekWsmo)::before {
+  content: none !important;
+  display: none !important;
+}
+html body ._7AlhCx3XGzBeIrQaCneUD ._19axKcqYRuaJ8vdYKYmtTQ {
+  color: #8a909c !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+}
+html body ._7AlhCx3XGzBeIrQaCneUD:hover:not(._2cO0HdvLEGAdhosLekWsmo) ._19axKcqYRuaJ8vdYKYmtTQ {
+  color: #ffffff !important;
+}
+html body ._7AlhCx3XGzBeIrQaCneUD._1gqEjB5QsKT_NftD1dEsdZ:not(._2cO0HdvLEGAdhosLekWsmo) ._19axKcqYRuaJ8vdYKYmtTQ {
+  color: #ffffff !important;
+  position: relative !important;
+}
+html body ._7AlhCx3XGzBeIrQaCneUD._1gqEjB5QsKT_NftD1dEsdZ:not(._2cO0HdvLEGAdhosLekWsmo) ._19axKcqYRuaJ8vdYKYmtTQ::after {
+  content: "" !important;
+  display: block !important;
+  position: absolute !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: -6px !important;
+  height: 2px !important;
+  border-radius: 2px !important;
+  background: #66FCF1 !important;
+  box-shadow: 0 0 10px rgba(102, 252, 241, 0.45) !important;
+  animation: none !important;
+}
+/* ===== FINAL: never hide window min / max / close ===== */
+html body .title-bar-actions.window-controls,
+html body .title-bar-actions,
+html body .title-area-icon,
+html body.DesktopUI .title-area-icon,
+html body ._39oUCO1OuizVPwcnnv88no .qP17eBPXkfezFfexZ4hC3 {
+  display: flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  -webkit-app-region: no-drag !important;
+}
+html body ._1Ky59qmywxOUtNcI1cgmkX {
+  max-width: calc(100% - 140px) !important;
+}
+
+
+/* ===== FINAL: Context menus clickable — Position ABOVE mouse overlay (1599) ===== */
+/* Steam: ContextMenuMouseOverlay = _3Knd7Am6… z-index:1599; menu is child of ContextMenuPosition */
+._2yAm5LY_eu-Vg_52l0HFlM,
+body.ModalDialogPopup ._2yAm5LY_eu-Vg_52l0HFlM,
+body.ModalDialogPopup .DialogMenuPosition,
+body.ModalDialogPopup [class*="DialogMenuPosition"] {
+  z-index: 5000 !important;
+  pointer-events: auto !important;
+  -webkit-app-region: no-drag !important;
+}
+
+/* Overlay catches outside clicks only — never raise above menus */
+._3Knd7Am6tTwTTu605YN4IX {
+  z-index: 1599 !important;
+  pointer-events: auto !important;
+}
+
+.PP7LM0Ow1K5qkR8WElLpt,
+body.ModalDialogPopup .PP7LM0Ow1K5qkR8WElLpt,
+body.ModalDialogPopup ._3pofGqV0buiKAfMPEs3_82,
+body.ModalDialogPopup .DialogDropDownMenu,
+body.ModalDialogPopup [class*="dropdown_DialogDropDownMenu"] {
+  width: unset !important;
+  min-width: unset !important;
+  max-width: unset !important;
+  transform: none !important;
+  filter: none !important;
+  overflow: visible !important;
+  pointer-events: auto !important;
+  -webkit-app-region: no-drag !important;
+  border-radius: 6px !important;
+  background: var(--mont-bg, #0B0C10) !important;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) !important;
+}
+
+body.ModalDialogPopup ._2yAm5LY_eu-Vg_52l0HFlM *,
+body.ModalDialogPopup .PP7LM0Ow1K5qkR8WElLpt *,
+body.ModalDialogPopup ._3pofGqV0buiKAfMPEs3_82 * {
+  pointer-events: auto !important;
+  -webkit-app-region: no-drag !important;
+}
+
+body.ModalDialogPopup [role="menuitem"],
+body.ModalDialogPopup ._1n7Wloe5jZ6fSuvV18NNWI,
+body.ModalDialogPopup [class*="contextMenuItem"],
+body.ModalDialogPopup .popup_menu_item {
+  width: unset !important;
+  min-width: unset !important;
+  max-width: unset !important;
+  padding: 6px 16px !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  transform: none !important;
+  white-space: nowrap !important;
+  overflow: visible !important;
+  pointer-events: auto !important;
+  -webkit-app-region: no-drag !important;
+  cursor: pointer !important;
+}
+
+html.ContextMenuPopup,
+body.ContextMenuPopup {
+  pointer-events: auto !important;
+  -webkit-app-region: no-drag !important;
+  width: unset !important;
+  min-width: unset !important;
+  transform: none !important;
+}
+
+.ModalPosition,
+.ModalPosition_Content,
+.DialogContent,
+.DialogContentTransition {
+  transform: none !important;
+  filter: none !important;
+}

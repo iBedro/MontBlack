@@ -1,0 +1,73 @@
+/* Mont Black — Core color tokens (single source of truth)
+   Base: obsidian black #0B0C10 — no Steam navy anywhere */
+
+:root {
+  color-scheme: dark;
+
+  /* ===== Base blacks (unified) ===== */
+  --mont-bg: #0B0C10;
+  --mont-surface: #0B0C10;
+  --mont-surface-2: #12141b;
+  --mont-elevated: #16181f;
+  --mont-elevated-2: #1a1d26;
+  --mont-elevated-3: #1f232d;
+  --mont-elevated-4: #252a35;
+
+  /* ===== Borders / hover (neutral, not blue) ===== */
+  --mont-border: rgba(255, 255, 255, 0.06);
+  --mont-border-strong: rgba(255, 255, 255, 0.12);
+  --mont-hover: rgba(255, 255, 255, 0.05);
+  --mont-hover-strong: rgba(255, 255, 255, 0.09);
+  --mont-active: rgba(255, 255, 255, 0.12);
+
+  /* ===== Text ===== */
+  --mont-text: #ffffff;
+  --mont-text-soft: #c5c6c7;
+  --mont-muted: #81878f;
+  --mont-muted-2: #6b7080;
+  --mont-nav-idle: #81878f;
+
+  /* ===== Accent (status / ring only — not page backgrounds) ===== */
+  --mont-accent: #45A29E;
+  --mont-accent-strong: #66FCF1;
+  --mont-accent-deep: #2f6f6c;
+  --mont-online-ring: #66FCF1;
+  --mont-profile-chevron: #66FCF1;
+
+  /* ===== Glass (neutral white, not blue wash) ===== */
+  --mont-glass-fill: rgba(255, 255, 255, 0.08);
+  --mont-glass-border: rgba(255, 255, 255, 0.16);
+  --mont-glass-gradient: linear-gradient(
+    165deg,
+    rgba(255, 255, 255, 0.14) 0%,
+    rgba(255, 255, 255, 0.05) 45%,
+    rgba(255, 255, 255, 0.03) 100%
+  );
+
+  --mont-menu-shadow: 0 10px 28px rgba(0, 0, 0, 0.55);
+  --mont-radius-menu: 16px;
+  --mont-radius-pill: 999px;
+  --mont-radius-sm: 8px;
+  --mont-radius-md: 12px;
+
+  --mont-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --mont-fast: 120ms;
+  --mont-med: 220ms;
+  --mont-slow: 360ms;
+
+  /* ===== Play / Install (Steam blue — intentional) ===== */
+  --mont-play: #2f6fad;
+  --mont-play-hover: #3d86c9;
+
+  /* ===== Shared theme aliases ===== */
+  --main-background: var(--mont-bg);
+  --secondary-background: var(--mont-surface-2);
+  --custom-accent: var(--mont-accent-strong);
+  --offline-status: #898989;
+  --online-status: var(--mont-online-ring);
+  --idle-status: #4c91ac;
+  --ingame-status: #8cd61d;
+  --ingameidle-status: #62813b;
+  --green-color: #769c1f;
+  --purple-color: #834e8d;
+}

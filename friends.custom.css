@@ -1,0 +1,363 @@
+/* Mont Black — Friends entry */
+
+@import url("Misc/Accents Code/tokens.css");
+@import url("Misc/Accents Code/accents.css");
+@import url("Misc/Remove Stuff/unify-black.css");
+/* Mont Black — Friends & Chat (full charcoal) */
+
+:root {
+  color-scheme: dark;
+  --mont-bg: #0B0C10;
+  --mont-surface: #0B0C10;
+  --mont-elevated: #12141b;
+  --mont-hover: #181818;
+  --mont-text: #e8e8e8;
+  --mont-muted: #8a8a8a;
+  --mont-accent: #45A29E;
+  --mont-accent-strong: #66FCF1;
+
+  --online: #d4d4d4;
+  --ingame: #b8c4a8;
+  --away: #7a7a7a;
+  --offline: #666666;
+  --gpColor-Blue: #d4d4d4;
+  --gpColor-LightBlue: #d4d4d4;
+  --color-blue: #d4d4d4;
+  --color-bluehi: #d4d4d4;
+  --accent: #45A29E;
+}
+
+/* Flat charcoal shell — one tone, no navy bands */
+html,
+body,
+.DesktopUI,
+.FriendsListContent,
+.friendListContainer,
+.friendListHeaderContainer,
+.friendlistListContainer,
+.titleBarContainer,
+.chatWindow,
+.singleWindowFocusBar,
+.friendsListSectionTitle,
+.FriendsListContent .friendListHeaderContainer,
+.friendListHeaderContainer.activeTab,
+.activeTab,
+.Tab,
+.Tab.active,
+.Tab.FriendsActiveTab,
+.friendsPickerTab,
+.groupListContainer,
+.GroupList,
+.chatRoomListContainer,
+.chatRoomContainer,
+.chatEntryContainer,
+.ChatRoomGroupDialog,
+.ChatTabContent,
+.ScrollPanel,
+.Panel,
+.listLabel,
+.FriendsListInsetShadowCtn,
+.friendGroupContainer,
+.friendGroup,
+.FriendsListContainer,
+.currentUserContainer,
+.listContentContainer,
+.multiChatDialog,
+._3H736VW0DVkVKKvDmaQ8dh,
+._3s3Qu7GTG10-xfe39uFxJD,
+._7kcBbj4E87q7pEeuGbBpu {
+  background: #0B0C10 !important;
+  background-color: #0B0C10 !important;
+  background-image: none !important;
+  color: #e8e8e8 !important;
+  border-color: rgba(255, 255, 255, 0.05) !important;
+  box-shadow: none !important;
+}
+
+/* Kill Steam cyan header glow + inset shadows */
+.statusHeaderGlow,
+.singleWindowFocusBar,
+.FriendsListInsetShadowCtn,
+.insetShadow,
+.verticalInsetShadow,
+[class*="statusHeaderGlow"],
+[class*="InsetShadow"],
+[class*="insetShadow"],
+[class*="FocusBar"] {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  background: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+/* Section headers = same charcoal (no striped bands) */
+.friendsListSectionTitle,
+.listLabel,
+.friendListHeaderContainer,
+.activeTab,
+.Tab.active,
+.Tab.FriendsActiveTab,
+.friendGroup .groupName,
+.onlineFriends,
+.offlineFriends,
+._30EfXN4e7Ca_0PoATtbeGx,
+[class*="FriendsSection"],
+[class*="SectionTitle"],
+[class*="sectionTitle"] {
+  background: #0B0C10 !important;
+  background-color: #0B0C10 !important;
+  background-image: none !important;
+  color: #b0b0b0 !important;
+  border-color: rgba(255, 255, 255, 0.05) !important;
+  border-top-color: rgba(255, 255, 255, 0.05) !important;
+  box-shadow: none !important;
+}
+
+.friendGroup.onlineFriends,
+.FriendsListContent .friendlistListContainer .friendGroup.onlineFriends {
+  border-top: 1px solid rgba(255, 255, 255, 0.05) !important;
+  background: #0B0C10 !important;
+}
+
+.friendGroup.offlineFriends,
+.FriendsListContent .friendlistListContainer .friendGroup.offlineFriends,
+.friendGroup.taggedGroup,
+.friendGroup.gameGroup {
+  border-top: 1px solid rgba(255, 255, 255, 0.05) !important;
+  background: #0B0C10 !important;
+}
+
+.currentUserContainer {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+/* Friend rows */
+.friendListItem,
+.FriendButton,
+.friend,
+.friendStatusHover,
+._7kcBbj4E87q7pEeuGbBpu,
+[class*="FriendContainer"],
+[class*="friendRow"],
+[class*="FriendRow"] {
+  background: transparent !important;
+  background-image: none !important;
+  border-color: transparent !important;
+}
+
+.friendListItem:hover,
+.friendStatusHover:hover,
+.FriendButton:hover,
+[class*="FriendSelector"]:hover,
+._3RbGK7To6ToUiyvTKjkqL-:hover,
+._3RbGK7To6ToUiyvTKjkqL-.gpfocus,
+.friendStatusHover.online:hover,
+.friendStatusHover.online.Friend_ContextMenuActive,
+.friendStatusHover.ingame:hover,
+.friendStatusHover.ingame.Friend_ContextMenuActive,
+.friendStatusHover.offline:hover,
+.friendStatusHover.offline.Friend_ContextMenuActive {
+  background: #181818 !important;
+  background-color: #181818 !important;
+  background-image: none !important;
+  filter: none !important;
+}
+
+/* Persona names — neutral charcoal grays (no steel/cyan) */
+.friend.online,
+.online,
+.Online,
+.persona.online,
+.persona_name_friend_online,
+.labelHolder.online,
+.labelHolder.online .nOdcT-MoOaXGePXLyPe0H,
+.labelHolder.online ._2Ri005Wg_uXDTa71kdRbcN,
+.online .nOdcT-MoOaXGePXLyPe0H,
+.online ._2Ri005Wg_uXDTa71kdRbcN,
+.online ._2Ri005Wg_uXDTa71kdRbcN a,
+.online ._2Ri005Wg_uXDTa71kdRbcN a:link,
+.online ._2Ri005Wg_uXDTa71kdRbcN a:visited,
+.online ._2Ri005Wg_uXDTa71kdRbcN a:hover,
+.online ._2Ri005Wg_uXDTa71kdRbcN a:active,
+.online ._1cB0qtF0paHWWyj1XNcnbG._2Ri005Wg_uXDTa71kdRbcN a,
+.online ._1cB0qtF0paHWWyj1XNcnbG._2Ri005Wg_uXDTa71kdRbcN a:link,
+.online ._1cB0qtF0paHWWyj1XNcnbG._2Ri005Wg_uXDTa71kdRbcN a:visited,
+.online ._1cB0qtF0paHWWyj1XNcnbG._2Ri005Wg_uXDTa71kdRbcN a:hover,
+.online ._1cB0qtF0paHWWyj1XNcnbG._2Ri005Wg_uXDTa71kdRbcN a:active,
+._1DsumfIa3MlkzUV9EXY5W9.online ._2n0EiKMGRP-r_BI5tDtttu,
+._1DsumfIa3MlkzUV9EXY5W9.online.rpZ9bKyFXYvNQvgtKn5GV ._2n0EiKMGRP-r_BI5tDtttu,
+._1xTATKELHR-lRS_s3A4yzd ._2jZ0A5VjGTNGTQm03FbLrF.online ._1SWhpi9ByGQrwHGQgTJCF5,
+._1xTATKELHR-lRS_s3A4yzd ._2jZ0A5VjGTNGTQm03FbLrF.online ._3c5GOobmMUyjAWTosaUKUS,
+._3yD46y5pd3zOGR7CzKs0mC.online,
+._2MD8aK_Q9dU8Sax4eiNYIp.online,
+.Dialog_EditNickName .friend.online .DialogTextInputBase,
+.Dialog_ChangePersonaName .friend.online .DialogTextInputBase,
+.mutualFriendNumber,
+.friend.online .persona_name,
+.friend.online .friend_status,
+.currentUserContainer .nOdcT-MoOaXGePXLyPe0H,
+.currentUserContainer ._2Ri005Wg_uXDTa71kdRbcN,
+[class*="persona_name"].online,
+[class*="PersonaName"].online,
+.online .persona_name,
+.online [class*="PersonaName"],
+.online [class*="persona"],
+._3kzMQmfYICYFyjZkZ14csY {
+  color: #d4d4d4 !important;
+  fill: #d4d4d4 !important;
+}
+
+/* Status under name */
+.online .friend_status,
+.online [class*="statusLabel"],
+.online [class*="StatusLabel"],
+.online [class*="gameName"],
+.labelHolder.online > div:last-child,
+.friend.online .labelHolder > div:last-child {
+  color: #8a8a8a !important;
+}
+
+.ingame,
+.InGame,
+.persona.ingame,
+.friend.ingame,
+.friend.ingame .persona_name,
+.friend.ingame .friend_status,
+.persona_name_friend_online_game,
+.labelHolder.ingame,
+.labelHolder.ingame .nOdcT-MoOaXGePXLyPe0H,
+.labelHolder.ingame ._2Ri005Wg_uXDTa71kdRbcN,
+.ingame .nOdcT-MoOaXGePXLyPe0H,
+.ingame ._2Ri005Wg_uXDTa71kdRbcN,
+.ingame ._2Ri005Wg_uXDTa71kdRbcN a,
+.ingame ._2Ri005Wg_uXDTa71kdRbcN a:link,
+.ingame ._2Ri005Wg_uXDTa71kdRbcN a:visited {
+  color: #b8c4a8 !important;
+  fill: #b8c4a8 !important;
+}
+
+.away,
+.Away,
+.awayOrSnooze,
+.offline,
+.Offline,
+.friend.away .persona_name,
+.friend.away .friend_status,
+.friend.offline .persona_name,
+.friend.offline .friend_status,
+.awayOrSnooze .nOdcT-MoOaXGePXLyPe0H,
+.awayOrSnooze ._2Ri005Wg_uXDTa71kdRbcN,
+.awayOrSnooze.online .nOdcT-MoOaXGePXLyPe0H,
+.awayOrSnooze.online ._2Ri005Wg_uXDTa71kdRbcN {
+  color: #7a7a7a !important;
+  fill: #7a7a7a !important;
+}
+
+/* Status dots — charcoal gray, not cyan */
+.avatarStatus,
+[class*="avatarStatus"],
+[class*="AvatarStatus"],
+.online .avatarHolder::after,
+.SteamPlayerAvatarOnline,
+[class*="SteamPlayerAvatar"],
+.online ._3xUpb5DWXPFNcHHIcv-9pe,
+._1xTATKELHR-lRS_s3A4yzd ._2jZ0A5VjGTNGTQm03FbLrF.online ._1YdpXFoH7P9pEEXDMITSHu._1k5YkN8kx48i2TZ6kG9muA,
+._1d4A6Fu8SM56Ofli_SOVHl.online,
+._1mMC7Hv71CzO0jfm_66W4K.online,
+._1iutOH026zK2dbpsMFDmMm.online,
+._2wKwJWdgy12ZO1tSjI9lXY.online,
+.statMembersOnline .statCircle,
+.speaker.online .speakerStatus {
+  border-color: #9a9a9a !important;
+  background: #9a9a9a !important;
+  background-color: #9a9a9a !important;
+  box-shadow: none !important;
+}
+
+.online .SVGIcon_DoNotDisturb circle,
+.online .SVGIcon_DoNotDisturb line,
+.ChatRoomAddRoomBtn .SVGIcon_PlusCircle {
+  stroke: var(--mont-accent-strong, #66FCF1) !important;
+  fill: var(--mont-accent-strong, #66FCF1) !important;
+}
+
+/* Kill leftover Steam navy / cool-gray fills */
+[style*="#23262e"],
+[style*="#171d25"],
+[style*="#1b2838"],
+[style*="#3d4450"],
+[style*="#434953"],
+[style*="#0e141b"],
+[style*="rgb(35, 38, 46)"],
+[style*="rgb(27, 40, 56)"],
+[style*="rgb(14, 20, 27)"],
+[style*="rgb(67, 73, 83)"] {
+  background: #0B0C10 !important;
+  background-color: #0B0C10 !important;
+  background-image: none !important;
+}
+
+/* Placeholder / muted copy */
+.GroupChatPlaceholder,
+[class*="Placeholder"],
+[class*="emptyState"],
+[class*="EmptyState"] {
+  color: #7a7a7a !important;
+  background: transparent !important;
+}
+
+/* Scrollbars */
+::-webkit-scrollbar,
+::-webkit-scrollbar-track {
+  background: #0B0C10 !important;
+}
+::-webkit-scrollbar-thumb {
+  background: #2a2a2a !important;
+  border-radius: 8px !important;
+}
+
+/* Avatars — perfect circles */
+.avatarHolder,
+.avatar,
+.FriendButton .avatarHolder,
+.FriendButton .avatar,
+[class*="avatarHolder"],
+[class*="AvatarHolder"],
+[class*="playerAvatar"],
+[class*="PlayerAvatar"],
+[class*="Avatar"],
+.mediumHolder,
+.smallHolder,
+.largeHolder,
+.r382axHDUABZkqdVnGrdY {
+  width: 40px !important;
+  height: 40px !important;
+  min-width: 40px !important;
+  min-height: 40px !important;
+  max-width: 40px !important;
+  max-height: 40px !important;
+  aspect-ratio: 1 / 1 !important;
+  border-radius: 50% !important;
+  overflow: hidden !important;
+  flex-shrink: 0 !important;
+  flex-grow: 0 !important;
+}
+
+.avatar img,
+.avatarHolder img,
+[class*="avatar"] img,
+[class*="Avatar"] img,
+[class*="playerAvatar"] img,
+.mediumHolder img,
+.smallHolder img,
+.largeHolder img {
+  width: 100% !important;
+  height: 100% !important;
+  aspect-ratio: 1 / 1 !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  display: block !important;
+}

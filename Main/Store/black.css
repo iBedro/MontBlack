@@ -1,0 +1,144 @@
+/* Mont Black — Store nav bar = solid black (not navy / not bright blue) */
+
+/* ===== Entire store secondary nav strip ===== */
+#store_header,
+#store_header .content,
+#store_nav_area,
+#store_nav_area .store_nav,
+#store_nav_area .store_nav .content,
+.store_nav,
+.store_nav_bg,
+.responsive_store_nav_ctn_spacer,
+#responsive_store_nav_ctn,
+#responsive_store_nav_ctn > div,
+#responsive_store_nav_overlay,
+#responsive_store_nav_overlay_ctn,
+.StoreMenuLoadingPlaceholder,
+[data-featuretarget="store-menu-v7"],
+[data-featuretarget="store-menu-v7"] > div {
+  background: #0B0C10 !important;
+  background-color: #0B0C10 !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  border-color: transparent !important;
+  color: #c8c8c8 !important;
+}
+
+#responsive_store_nav_ctn *,
+[data-featuretarget="store-menu-v7"] * {
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+/* Tabs / links on the strip */
+#store_nav_area .tab,
+#store_nav_area a.tab,
+.store_nav .tab,
+.store_nav a,
+#responsive_store_nav_ctn a,
+#responsive_store_nav_ctn button {
+  background: transparent !important;
+  background-image: none !important;
+  color: #c8c8c8 !important;
+  box-shadow: none !important;
+}
+
+#store_nav_area .tab:hover,
+.store_nav a:hover,
+#responsive_store_nav_ctn a:hover {
+  background: #16181f !important;
+  color: #ffffff !important;
+}
+
+/* Search field */
+#store_search,
+.searchbox,
+#store_nav_area .searchbox,
+input#store_search,
+#responsive_store_nav_ctn input,
+#responsive_store_nav_ctn [class*="Search"],
+#responsive_store_nav_ctn [class*="search"] {
+  background: #12141b !important;
+  background-color: #12141b !important;
+  background-image: none !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 4px !important;
+  color: #ffffff !important;
+  box-shadow: none !important;
+}
+
+/* Search button (was bright Steam blue) */
+#store_search_link,
+a#store_search_link,
+#store_search_link span,
+#store_search_link img,
+#responsive_store_nav_ctn button[type="submit"],
+#responsive_store_nav_ctn [class*="SearchButton"],
+#responsive_store_nav_ctn [class*="searchButton"] {
+  background: #1a1a1a !important;
+  background-color: #1a1a1a !important;
+  background-image: none !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: none !important;
+  color: #ffffff !important;
+  filter: none !important;
+}
+
+#store_search_link img {
+  filter: grayscale(1) brightness(1.6) !important;
+  opacity: 0.9 !important;
+}
+
+#store_search_link:hover,
+a#store_search_link:hover {
+  background: #252525 !important;
+  background-color: #252525 !important;
+}
+
+/* Cart (was bright Steam blue) */
+a#store_header_cart_btn,
+#cart_status_data,
+#cart_link,
+.store_header_btn,
+.store_header_btn_green,
+.store_header_btn_content,
+[class*="CartButton"],
+[class*="cartButton"],
+[href*="/cart"] {
+  background: #1a1a1a !important;
+  background-color: #1a1a1a !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  filter: none !important;
+}
+
+a#store_header_cart_btn:hover,
+#cart_status_data:hover {
+  background: #252525 !important;
+  background-color: #252525 !important;
+}
+
+/* Wishlist — stay quiet on the black strip */
+#wishlist_link,
+#wishlist_link span {
+  background: transparent !important;
+  color: #c8c8c8 !important;
+}
+
+/* Kill leftover Steam blue fills on this strip */
+#store_nav_area [style*="#1a9fff"],
+#store_nav_area [style*="#66c0f4"],
+#store_nav_area [style*="rgb(26, 159, 255)"],
+#store_header [style*="#1a9fff"],
+#store_header [style*="#66c0f4"],
+#responsive_store_nav_ctn [style*="#1a9fff"],
+[style*="#1a9fff"],
+[style*="#1A9FFF"],
+[style*="#66c0f4"],
+[style*="#66C0F4"] {
+  background: #1a1a1a !important;
+  background-color: #1a1a1a !important;
+  background-image: none !important;
+}

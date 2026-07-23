@@ -1,0 +1,35 @@
+/* Mont Black — Accents (color-mix helpers)
+   Backgrounds stay black; accent is only for highlights. */
+
+:root, body {
+  --accent: var(--mont-accent-strong) !important;
+  --accent-transparent: color-mix(in srgb, var(--mont-accent-strong) 14%, transparent) !important;
+  --accent-transparent-alt: color-mix(in srgb, var(--mont-accent-strong) 10%, transparent) !important;
+  --accent-transparent-alt2: color-mix(in srgb, var(--mont-accent-strong) 22%, transparent) !important;
+  --accent-light: color-mix(in srgb, var(--mont-accent-strong) 70%, white) !important;
+  --accent-dark: color-mix(in srgb, var(--mont-accent-strong) 85%, black) !important;
+
+  /* Steam GP / system aliases → black + cyan accent */
+  --gpColor-Blue: var(--mont-accent-strong);
+  --gpColor-LightBlue: var(--mont-accent-strong);
+  --gpStoreLightBlue: var(--mont-accent-strong);
+  --gpBg-Blue: var(--mont-bg);
+  --gpBg-LightBlue: var(--mont-surface-2);
+  --gpBg-DarkBlue: var(--mont-bg);
+  --color-blue: var(--mont-accent-strong);
+  --color-bluehi: var(--mont-accent-strong);
+  --color-focus: var(--mont-accent-strong);
+  --accent-disabled: var(--mont-accent-deep);
+  --color-dark: var(--mont-bg);
+  --color-darker: var(--mont-bg);
+  --color-darkest: #050508;
+  --color-light: var(--mont-elevated);
+  --color-lighter: var(--mont-elevated-3);
+  --black: #050508;
+  --white: #ffffff;
+  --scrollbar: var(--mont-elevated);
+  --dselect-highlight: var(--mont-surface-2);
+  --bluehighlight: var(--mont-surface-2);
+  --blueborder: var(--mont-border);
+  --systemAccentColor: var(--mont-accent-strong);
+}

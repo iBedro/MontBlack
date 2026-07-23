@@ -1,0 +1,67 @@
+/* Mont Black — Unify black (kill Steam navy / blue washes)
+   One background family everywhere. */
+
+html, body,
+.DesktopUI, .fullheight, #SteamDesktop,
+[class*="TitleBar"], [class*="titlebar"],
+[class*="steamdesktop_"],
+._3Z7VQ1IMk4E3HsHvrkLNgo,
+._3vCzSrrXZzZjVJFZNg9SGu,
+._1ENHEsrSLcTRtPQFl1F-wL,
+._3mz8wQ6Q44B8P7pzPP4Iyw,
+._3x1HklzyDs4TEjACrRO2tB,
+._2Dd4T78PcCTUVgOtDGFY5j,
+._2g5K_hJWc7jVo81zuejhk2,
+[class*="libraryhome_"],
+[class*="LibraryHome"],
+[class*="Shelf"],
+[class*="WhatsNew"],
+[class*="DownloadPage"],
+[class*="downloads_"] {
+  background: var(--mont-bg, #0B0C10) !important;
+  background-color: var(--mont-bg, #0B0C10) !important;
+  background-image: none !important;
+}
+
+/* Kill Steam navy / cool-grey fills via inline style fragments */
+[style*="#1b2838"],
+[style*="#171a21"],
+[style*="#2a475e"],
+[style*="#1a2738"],
+[style*="#16202d"],
+[style*="#1e2329"],
+[style*="#212b45"],
+[style*="#23262e"],
+[style*="#0e141b"],
+[style*="#1B2838"],
+[style*="#171A21"],
+[style*="#2A475E"],
+[style*="rgb(27, 40, 56)"],
+[style*="rgb(23, 26, 33)"],
+[style*="rgb(42, 71, 94)"],
+[style*="rgb(14, 20, 27)"],
+[style*="rgb(35, 38, 46)"] {
+  background: var(--mont-bg, #0B0C10) !important;
+  background-color: var(--mont-bg, #0B0C10) !important;
+  background-image: none !important;
+}
+
+/* Soft elevated cards stay charcoal-black family (never navy) */
+._7EGqd8bdiXJBd2fj5Hh8r,
+._31ptFGGMZrSQc5BCX1e5lm,
+._5uvIN6jXDXzzck59F-nhv,
+.ModalPosition_Content,
+.DialogContent,
+.DialogBody,
+.DialogHeader,
+.DialogFooter {
+  background: var(--mont-surface-2, #12141b) !important;
+  background-color: var(--mont-surface-2, #12141b) !important;
+  background-image: none !important;
+}
+
+/* Progress / selection highlights — never Steam bright blue fill */
+[class*="Progress"] > *,
+[class*="progressBar"] > div {
+  background-image: none !important;
+}

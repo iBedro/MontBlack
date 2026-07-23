@@ -1,0 +1,98 @@
+/* Mont Black — Notifications entry */
+
+@import url("Misc/Accents Code/tokens.css");
+@import url("Misc/Remove Stuff/unify-black.css");
+/* Mont Black — toast / notification windows */
+
+:root {
+  color-scheme: dark;
+  --mont-bg: #0B0C10;
+  --mont-surface: #121212;
+  --mont-elevated: #1a1a1a;
+  --mont-hover: #252525;
+  --mont-border: rgba(255, 255, 255, 0.06);
+  --mont-text: #ffffff;
+  --mont-muted: #b8b8be;
+}
+
+html,
+body,
+.DesktopUI {
+  background: #0B0C10 !important;
+  background-color: #0B0C10 !important;
+  color: #ffffff !important;
+}
+
+/* Toast shells */
+._1OOQPJx0nCNP9ME9toCmV7,
+.UmtNgXD92RoDeYjxKEskk,
+._3ENh9LzRnZgfTyfxp_J2rr,
+._2NdiftmP-B3C4LPWnNGTCB,
+.QbSr4hMpMfp0Qtsg4qOh5,
+.vW8HMuHYS7fdibpUYwTg3,
+.notification,
+.toast,
+[class*="DesktopToast"],
+[class*="SteamNotification"] {
+  background: #121212 !important;
+  background-color: #121212 !important;
+  background-image: none !important;
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.55) !important;
+  color: #ffffff !important;
+}
+
+/* Unread / template rows */
+._1YAQHDHv4hsPaauccvAFtn,
+._1B1XTNsfuwOaDPAkkr8M42,
+._2kLHZTRgRl0POZfXPcfxks,
+._1X5wHQgKhsyFOBfnka56DP,
+._3-H47wPl1Ng3lh7xGZOPIg,
+._2h6KD6p6y4vIgO2Toxx-_K,
+._1k275cE1gk-jpZE5r-37zl,
+._5HZT7qE6px0VNOBQ7q6Nz,
+._1GcAugE5c4nbBUwrA4_xwS,
+._3B8wRA4H7e_oSksYNqpSPv,
+._2uW9K6fqc6jZX1XBjnLjw,
+.jD4XY_gqDiLlX0jZqK1MA,
+[class*="StandardTemplate"],
+[class*="AllNotificationsTemplate"] {
+  background: #1a1a1a !important;
+  background-color: #1a1a1a !important;
+  background-image: none !important;
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+  border-radius: 10px !important;
+  color: #ffffff !important;
+}
+
+._1YAQHDHv4hsPaauccvAFtn:hover,
+._1B1XTNsfuwOaDPAkkr8M42:hover,
+._2kLHZTRgRl0POZfXPcfxks:hover,
+._3-H47wPl1Ng3lh7xGZOPIg:hover,
+._2h6KD6p6y4vIgO2Toxx-_K:hover,
+._1k275cE1gk-jpZE5r-37zl:hover,
+._5HZT7qE6px0VNOBQ7q6Nz:hover,
+[class*="StandardTemplate"]:hover {
+  background: #252525 !important;
+  background-color: #252525 !important;
+  color: #ffffff !important;
+}
+
+/* Text */
+[class*="StandardNotificationDescription"],
+[class*="Title"],
+._3fUrGm-WHq3qxIpSqRZDgc,
+._26v9mHAi56x63OwY-jxett,
+.Wh50moO-nKvfE3l4Buav,
+.zB56AM55vMjPKSZPL0A24 {
+  color: #ffffff !important;
+}
+
+[class*="StandardNotificationSubText"],
+._2yUEtF_eCucoxdu85zlOCp,
+._3hEeummFKRey8l5VXxZwxz,
+._2T5BxMT87QHfYWXDHFzpT1,
+.EVwRp-YAbTHPb2cfgH-Mu {
+  color: #b8b8be !important;
+}

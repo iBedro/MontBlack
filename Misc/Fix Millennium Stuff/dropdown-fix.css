@@ -1,0 +1,159 @@
+/* Mont Black — Millennium island
+   Fix clicks: ContextMenuPosition must stack ABOVE ContextMenuMouseOverlay (z=1599).
+   Overlay class: _3Knd7Am6tTwTTu605YN4IX
+   Position class: _2yAm5LY_eu-Vg_52l0HFlM
+   Menu panel: PP7LM0Ow1K5qkR8WElLpt */
+
+@keyframes montDialogFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+body.ModalDialogPopup .DialogContent,
+body.ModalDialogPopup .ModalPosition_Content {
+  animation: montDialogFade 160ms ease both !important;
+  transform: none !important;
+  filter: none !important;
+}
+
+.ModalPosition,
+.ModalPosition_Content,
+.DialogContent,
+.DialogContentTransition,
+.MillenniumSettings,
+[class*="MillenniumSettings"],
+.CFTLX2wIKOK3hNV-fS7_V {
+  transform: none !important;
+  filter: none !important;
+}
+
+.CFTLX2wIKOK3hNV-fS7_V.DesktopUI,
+.DesktopUI .CFTLX2wIKOK3hNV-fS7_V,
+.MillenniumSettings,
+[class*="MillenniumSettings"],
+body.ModalDialogPopup .CFTLX2wIKOK3hNV-fS7_V {
+  background: var(--mont-bg, #0B0C10) !important;
+  background-color: var(--mont-bg, #0B0C10) !important;
+}
+
+body.ModalDialogPopup ._2kwFFHckg8jvnwJfg9-la8 {
+  background: var(--mont-surface-2, #12141b) !important;
+}
+
+body.ModalDialogPopup ._2bl0iQ9xigbq4Zd1NI6NZl::before {
+  background: var(--mont-accent, #66FCF1) !important;
+}
+
+body.ModalDialogPopup .DialogDropDown_Arrow .SVGIcon_DownArrowContextMenu {
+  fill: var(--mont-accent, #66FCF1) !important;
+}
+
+body.ModalDialogPopup ._2rjVTGz8aLvqOdz5v2gq5C {
+  color: var(--mont-accent, #66FCF1) !important;
+}
+
+/* === CLICK FIX (global + Millennium) === */
+._2yAm5LY_eu-Vg_52l0HFlM {
+  z-index: 5000 !important;
+  pointer-events: auto !important;
+  -webkit-app-region: no-drag !important;
+}
+
+._3Knd7Am6tTwTTu605YN4IX {
+  z-index: 1599 !important;
+  /* must stay below Position (5000); still receives outside clicks */
+  pointer-events: auto !important;
+}
+
+.PP7LM0Ow1K5qkR8WElLpt,
+._3pofGqV0buiKAfMPEs3_82 {
+  pointer-events: auto !important;
+  -webkit-app-region: no-drag !important;
+}
+
+body.ModalDialogPopup ._2yAm5LY_eu-Vg_52l0HFlM,
+body.ModalDialogPopup .DialogMenuPosition {
+  z-index: 5000 !important;
+  pointer-events: auto !important;
+  -webkit-app-region: no-drag !important;
+}
+
+body.ModalDialogPopup .PP7LM0Ow1K5qkR8WElLpt,
+body.ModalDialogPopup ._3pofGqV0buiKAfMPEs3_82,
+body.ModalDialogPopup .DialogDropDownMenu,
+body.ModalDialogPopup [class*="dropdown_DialogDropDownMenu"] {
+  width: unset !important;
+  min-width: unset !important;
+  max-width: unset !important;
+  transform: none !important;
+  overflow: visible !important;
+  pointer-events: auto !important;
+  -webkit-app-region: no-drag !important;
+  background: var(--mont-bg, #0B0C10) !important;
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+  border-radius: 6px !important;
+  box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.25) !important;
+  padding: 4px 0 !important;
+  color: #ffffff !important;
+}
+
+body.ModalDialogPopup ._2yAm5LY_eu-Vg_52l0HFlM *,
+body.ModalDialogPopup .PP7LM0Ow1K5qkR8WElLpt *,
+body.ModalDialogPopup ._3pofGqV0buiKAfMPEs3_82 * {
+  pointer-events: auto !important;
+  -webkit-app-region: no-drag !important;
+}
+
+body.ModalDialogPopup ._1n7Wloe5jZ6fSuvV18NNWI,
+body.ModalDialogPopup [role="menuitem"],
+body.ModalDialogPopup [class*="contextMenuItem"],
+body.ModalDialogPopup .popup_menu_item {
+  padding: 6px 16px !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  color: #ffffff !important;
+  white-space: nowrap !important;
+  overflow: visible !important;
+  pointer-events: auto !important;
+  -webkit-app-region: no-drag !important;
+  cursor: pointer !important;
+  width: unset !important;
+  min-width: unset !important;
+  max-width: unset !important;
+  transform: none !important;
+}
+
+body.ModalDialogPopup ._1n7Wloe5jZ6fSuvV18NNWI:hover,
+body.ModalDialogPopup [role="menuitem"]:hover,
+body.ModalDialogPopup [class*="contextMenuItem"]:hover {
+  background: rgba(255, 255, 255, 0.08) !important;
+}
+
+html.ContextMenuPopup,
+body.ContextMenuPopup {
+  pointer-events: auto !important;
+  -webkit-app-region: no-drag !important;
+  width: unset !important;
+  min-width: unset !important;
+  transform: none !important;
+  overflow: visible !important;
+  background: var(--mont-bg, #0B0C10) !important;
+}
+
+body.ContextMenuPopup .PP7LM0Ow1K5qkR8WElLpt,
+body.ContextMenuPopup .popup_body,
+body.ContextMenuPopup .popup_menu {
+  pointer-events: auto !important;
+  -webkit-app-region: no-drag !important;
+}
+
+body.ContextMenuPopup ._1n7Wloe5jZ6fSuvV18NNWI,
+body.ContextMenuPopup [role="menuitem"] {
+  pointer-events: auto !important;
+  -webkit-app-region: no-drag !important;
+  cursor: pointer !important;
+  padding: 6px 16px !important;
+}

@@ -1,0 +1,29 @@
+/* Mont Black — Store/Community entry */
+
+@import url("Misc/Accents Code/tokens.css");
+@import url("Misc/Accents Code/accents.css");
+@import url("Misc/Remove Stuff/unify-black.css");
+@import url("Main/Store/black.css");
+
+:root {
+  --gpBg-Blue: var(--mont-bg, #0B0C10) !important;
+  --gpBg-DarkBlue: var(--mont-bg, #0B0C10) !important;
+  --gpBg-LightBlue: var(--mont-surface-2, #12141b) !important;
+}
+
+.btn_green_white_innerfade,
+.btn_green_steamui,
+.btnv6_green_white_innerfade,
+.btnv6_blue_hoverfade {
+  background: var(--mont-play, #2f6fad) !important;
+  background-image: none !important;
+  color: #fff !important;
+  border-radius: 10px !important;
+}
+
+.popup_block, .popup_body, .popup_menu {
+  background: var(--mont-bg, #0B0C10) !important;
+  border-radius: 14px !important;
+  border: 1px solid var(--mont-border) !important;
+  color: #ffffff !important;
+}

@@ -1,0 +1,33 @@
+{
+  "name": "Mont Black",
+  "author": "Bedro",
+  "description": "Dark charcoal Steam theme with cyan accents.",
+  "version": "5.2.1",
+  "tags": ["Dark", "Black", "Modern", "Minimal"],
+  "header_image": "https://raw.githubusercontent.com/iBedro/MontBlack/main/assets/header.png",
+  "splash_image": "https://raw.githubusercontent.com/iBedro/MontBlack/main/assets/splash.png",
+  "github": {
+    "owner": "iBedro",
+    "repo_name": "MontBlack"
+  },
+  "RootColors": "colors.css",
+  "Steam-WebKit": "webkit.css",
+  "UseDefaultPatches": true,
+  "Patches": [
+    {
+      "MatchRegexString": "store\\.steampowered\\.com",
+      "TargetCss": "webkit.css",
+      "TargetJs": "webkit.js"
+    },
+    {
+      "MatchRegexString": "steamcommunity\\.com",
+      "TargetCss": "webkit.css",
+      "TargetJs": "webkit.js"
+    },
+    {
+      "MatchRegexString": "steamloopback\\.host",
+      "TargetCss": "webkit.css",
+      "TargetJs": "webkit.js"
+    }
+  ]
+}

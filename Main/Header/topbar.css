@@ -1,0 +1,347 @@
+/* Mont Black — Header top bar
+   Large Steam logo on the left (clickable menu) + STEAM/VIEW/FRIENDS/GAMES/HELP.
+   Window min/max/close must stay visible (never hide qP17eBPX slot). */
+
+._39oUCO1OuizVPwcnnv88no {
+  height: 52px !important;
+  min-height: 52px !important;
+  position: relative !important;
+}
+._3Z7VQ1IMk4E3HsHvrkLNgo,
+._39oUCO1OuizVPwcnnv88no,
+._3cykd-VfN_xBxf3Qxriccm {
+  background: var(--mont-bg, #0B0C10) !important;
+  box-shadow: none !important;
+}
+
+/* Do NOT hide .qP17eBPXkfezFfexZ4hC3 — that slot reserves space for
+   window min / max / close. Hiding it removes X − □. */
+
+/* Menu bar cluster — left aligned; leave room for window controls on the right */
+html body ._1Ky59qmywxOUtNcI1cgmkX {
+  display: flex !important;
+  align-items: center !important;
+  padding-left: 12px !important;
+  gap: 2px !important;
+  max-width: calc(100% - 140px) !important;
+  overflow: hidden !important;
+  -webkit-app-region: no-drag !important;
+}
+
+/* Real Steam button — large logo (click opens Steam menu) */
+html body .bSKGlAJG2UVWTsntEJY2v {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  height: 40px !important;
+  min-width: 40px !important;
+  padding: 0 4px !important;
+  margin: 0 !important;
+  border-radius: 10px !important;
+  background: transparent !important;
+  -webkit-app-region: no-drag !important;
+  cursor: pointer !important;
+  transition: background-color 160ms ease !important;
+}
+html body .bSKGlAJG2UVWTsntEJY2v:hover {
+  background: rgba(255, 255, 255, 0.06) !important;
+}
+
+html body .bSKGlAJG2UVWTsntEJY2v .GG9wVQz6PLlhGHlJyZh4E {
+  display: block !important;
+  width: 32px !important;
+  height: 32px !important;
+  min-width: 32px !important;
+  min-height: 32px !important;
+  margin: 0 !important;
+  opacity: 1 !important;
+  overflow: visible !important;
+  pointer-events: auto !important;
+}
+html body .bSKGlAJG2UVWTsntEJY2v .GG9wVQz6PLlhGHlJyZh4E path,
+html body .bSKGlAJG2UVWTsntEJY2v .GG9wVQz6PLlhGHlJyZh4E > path {
+  fill: #ffffff !important;
+  color: #ffffff !important;
+  transition: fill 160ms ease, color 160ms ease !important;
+}
+html body .bSKGlAJG2UVWTsntEJY2v:hover .GG9wVQz6PLlhGHlJyZh4E path,
+html body .bSKGlAJG2UVWTsntEJY2v:hover .GG9wVQz6PLlhGHlJyZh4E > path,
+html body .bSKGlAJG2UVWTsntEJY2v:hover {
+  fill: var(--mont-accent-strong, #66FCF1) !important;
+  color: var(--mont-accent-strong, #66FCF1) !important;
+}
+
+html body ._1GNJUJrGs0xUpASde60jQh {
+  display: flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+}
+
+/* All menu words visible again: STEAM · VIEW · FRIENDS · GAMES · HELP */
+html body ._2UyOBeiSdBayaFdRa39N2O {
+  display: flex !important;
+  align-items: center !important;
+  text-transform: uppercase !important;
+  letter-spacing: 2px !important;
+  font-weight: 700 !important;
+  font-size: 13px !important;
+  color: #ffffff !important;
+  padding: 6px 8px !important;
+  margin: 0 !important;
+  height: 100% !important;
+  -webkit-app-region: no-drag !important;
+  cursor: pointer !important;
+}
+html body ._2UyOBeiSdBayaFdRa39N2O:hover {
+  color: var(--mont-accent-strong, #66FCF1) !important;
+}
+
+/* SuperNav — clear the logo + menu row */
+._3Z3ohQ8-1NKnCZkbS6fvy {
+  position: absolute !important;
+  left: 12px !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  padding: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 2px !important;
+  overflow: visible !important;
+}
+._2D64jIEK7wpUR_NlObDW76 {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  align-items: center !important;
+  gap: 4px !important;
+  height: 100% !important;
+}
+
+/* Keep Steam default order: Store · Library · Community · Profile */
+html body ._7AlhCx3XGzBeIrQaCneUD:nth-of-type(1),
+html body ._7AlhCx3XGzBeIrQaCneUD:nth-of-type(2),
+html body ._7AlhCx3XGzBeIrQaCneUD:nth-of-type(3),
+html body ._7AlhCx3XGzBeIrQaCneUD:nth-of-type(4) {
+  order: unset !important;
+}
+
+/* Idle tabs — NO box, just clean uppercase label */
+html body ._7AlhCx3XGzBeIrQaCneUD,
+html body.DesktopUI ._7AlhCx3XGzBeIrQaCneUD {
+  position: relative !important;
+  flex: 0 0 auto !important;
+  flex-shrink: 0 !important;
+  min-width: max-content !important;
+  max-width: none !important;
+  height: 32px !important;
+  margin: 0 !important;
+  padding: 0 14px !important;
+  border: none !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+  display: flex !important;
+  align-items: center !important;
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.04em !important;
+  text-transform: uppercase !important;
+  line-height: 32px !important;
+  transition: color 180ms ease !important;
+}
+html body ._7AlhCx3XGzBeIrQaCneUD:hover:not(._1gqEjB5QsKT_NftD1dEsdZ):not(._2cO0HdvLEGAdhosLekWsmo),
+html body ._7AlhCx3XGzBeIrQaCneUD.Eq8Px4ixn5sAFSR6_9wWQ {
+  background: transparent !important;
+  background-image: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  padding: 0 14px !important;
+}
+
+html body ._7AlhCx3XGzBeIrQaCneUD ._19axKcqYRuaJ8vdYKYmtTQ,
+html body.DesktopUI ._7AlhCx3XGzBeIrQaCneUD ._19axKcqYRuaJ8vdYKYmtTQ {
+  color: #8a909c !important;
+  font-size: inherit !important;
+  font-weight: inherit !important;
+  letter-spacing: inherit !important;
+  text-transform: inherit !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  line-height: inherit !important;
+  white-space: nowrap !important;
+}
+html body ._7AlhCx3XGzBeIrQaCneUD:hover:not(._2cO0HdvLEGAdhosLekWsmo) ._19axKcqYRuaJ8vdYKYmtTQ {
+  color: #ffffff !important;
+}
+
+/* Active — soft underline accent */
+html body ._7AlhCx3XGzBeIrQaCneUD._1gqEjB5QsKT_NftD1dEsdZ:not(._2cO0HdvLEGAdhosLekWsmo),
+html body.DesktopUI ._7AlhCx3XGzBeIrQaCneUD._1gqEjB5QsKT_NftD1dEsdZ:not(._2cO0HdvLEGAdhosLekWsmo) {
+  background: transparent !important;
+  background-image: none !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  padding: 0 14px !important;
+  margin: 0 !important;
+  overflow: visible !important;
+}
+html body ._7AlhCx3XGzBeIrQaCneUD._1gqEjB5QsKT_NftD1dEsdZ:not(._2cO0HdvLEGAdhosLekWsmo)::before {
+  content: none !important;
+  display: none !important;
+  animation: none !important;
+}
+html body ._7AlhCx3XGzBeIrQaCneUD._1gqEjB5QsKT_NftD1dEsdZ:not(._2cO0HdvLEGAdhosLekWsmo) ._19axKcqYRuaJ8vdYKYmtTQ {
+  color: #ffffff !important;
+  text-shadow: none !important;
+  position: relative !important;
+}
+html body ._7AlhCx3XGzBeIrQaCneUD._1gqEjB5QsKT_NftD1dEsdZ:not(._2cO0HdvLEGAdhosLekWsmo) ._19axKcqYRuaJ8vdYKYmtTQ::after {
+  content: "" !important;
+  display: block !important;
+  position: absolute !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: -6px !important;
+  height: 2px !important;
+  border-radius: 2px !important;
+  background: var(--mont-accent-strong, #66FCF1) !important;
+  box-shadow: 0 0 10px rgba(102, 252, 241, 0.45) !important;
+  animation: none !important;
+}
+
+/* Menu label hover accent (shared) */
+html body ._2UyOBeiSdBayaFdRa39N2O:hover {
+  color: var(--mont-accent-strong, #66FCF1) !important;
+}
+
+/* Right chrome — quiet icon buttons */
+html body ._3cykd-VfN_xBxf3Qxriccm {
+  margin-right: 8px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 2px !important;
+}
+html body ._3cykd-VfN_xBxf3Qxriccm ._5wILZhsLODVwGfcJ0hKmJ,
+html body ._3LKQ3S_yqrebeNLF6aeiog {
+  display: none !important;
+}
+
+html body ._3cykd-VfN_xBxf3Qxriccm ._13vrqU6oOqmmxrsZSW5O39,
+html body ._3cykd-VfN_xBxf3Qxriccm ._3arz-hc3FJ0QKXLPRUSaah,
+html body ._3cykd-VfN_xBxf3Qxriccm .Utdt7JrpIm5JlpQmqyj1v,
+html body .RtSv39ZoBOySnb8XQ5hJf,
+html body ._3cykd-VfN_xBxf3Qxriccm button:not(.DialogButton):not(.title-area-icon),
+html body [class*="TitleBarControls"] button:not(.DialogButton):not(.title-area-icon) {
+  width: 34px !important;
+  min-width: 34px !important;
+  height: 34px !important;
+  min-height: 34px !important;
+  margin: 0 2px !important;
+  padding: 0 !important;
+  border-radius: 8px !important;
+  background: transparent !important;
+  background-image: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  transform: none !important;
+  color: #8b929a !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+html body ._3cykd-VfN_xBxf3Qxriccm ._13vrqU6oOqmmxrsZSW5O39:hover,
+html body ._3cykd-VfN_xBxf3Qxriccm ._3arz-hc3FJ0QKXLPRUSaah:hover,
+html body ._3cykd-VfN_xBxf3Qxriccm .Utdt7JrpIm5JlpQmqyj1v:hover,
+html body .RtSv39ZoBOySnb8XQ5hJf:hover,
+html body ._3cykd-VfN_xBxf3Qxriccm button:not(.DialogButton):not(.title-area-icon):hover {
+  background: rgba(255, 255, 255, 0.06) !important;
+  color: #ffffff !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+html body.DesktopUI .title-area-icon,
+html body .title-area-icon,
+html body ._2Szzh5sKyGgnLUR870zbDE {
+  display: flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  width: 46px !important;
+  height: 32px !important;
+  min-width: 46px !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  color: #c8c8c8 !important;
+  pointer-events: auto !important;
+  -webkit-app-region: no-drag !important;
+}
+html body.DesktopUI .title-area-icon:hover,
+html body .title-area-icon:hover {
+  background: rgba(255, 255, 255, 0.08) !important;
+  color: #ffffff !important;
+}
+html body.DesktopUI .title-area-icon.closeButton:hover,
+html body .title-area-icon.closeButton:hover {
+  background: #e81123 !important;
+  color: #ffffff !important;
+}
+
+/* Window control strip — always visible on the right */
+html body .title-area,
+html body .title-area-children,
+html body .title-bar-actions,
+html body .title-bar-actions.window-controls,
+html body ._39oUCO1OuizVPwcnnv88no .qP17eBPXkfezFfexZ4hC3,
+html body ._39oUCO1OuizVPwcnnv88no ._1-9sir4j_KQiMqdkZjQN0u {
+  display: flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+html body ._39oUCO1OuizVPwcnnv88no .qP17eBPXkfezFfexZ4hC3 {
+  flex: 0 0 99px !important;
+  width: 99px !important;
+  min-width: 99px !important;
+  position: relative !important;
+}
+html body .title-area .title-bar-actions {
+  margin-top: 0 !important;
+  margin-right: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+/* Profile cluster layout — ring untouched */
+html body ._3cykd-VfN_xBxf3Qxriccm ._3yD46y5pd3zOGR7CzKs0mC,
+html body ._3yD46y5pd3zOGR7CzKs0mC {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  margin: 0 4px !important;
+  padding: 2px 8px 2px 4px !important;
+  border-radius: 999px !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  font-weight: 600 !important;
+  font-size: 13px !important;
+}
+html body ._3yD46y5pd3zOGR7CzKs0mC:hover {
+  background: rgba(255, 255, 255, 0.04) !important;
+}
+html body ._3yD46y5pd3zOGR7CzKs0mC ._2jphjrSifC6orDT4g_7Wd {
+  color: #8a909c !important;
+  order: 1 !important;
+}
+html body ._3yD46y5pd3zOGR7CzKs0mC ._3x51wbt5DYyWC8JKwQ51ir {
+  order: 2 !important;
+  color: var(--mont-profile-chevron, #66FCF1) !important;
+}

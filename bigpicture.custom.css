@@ -1,0 +1,29 @@
+/* Mont Black — Big Picture entry */
+
+@import url("Misc/Accents Code/tokens.css");
+@import url("Misc/Accents Code/accents.css");
+@import url("Misc/Remove Stuff/unify-black.css");
+/* Mont Black — Big Picture */
+:root {
+  color-scheme: only dark !important;
+  --mont-bg: #0B0C10;
+  --mont-surface: #12141b;
+  --mont-elevated: #161616;
+  --mont-text: #ffffff;
+  --mont-muted: #b3b3b3;
+  --mont-accent: #45A29E;
+  --mont-accent-strong: #66FCF1;
+  --gpColor-Blue: var(--mont-accent-strong);
+  --gpColor-LightBlue: var(--mont-accent-strong);
+  --gpBg-DarkBlue: var(--mont-bg);
+  --color-focus: var(--mont-accent);
+  --online: #d4d4d4;
+  --ingame: #b8c4a8;
+  --offline: #666666;
+  --scrollbar: var(--mont-elevated);
+}
+
+body {
+  background: var(--mont-bg) !important;
+  color: var(--mont-text) !important;
+}

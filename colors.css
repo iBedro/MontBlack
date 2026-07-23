@@ -1,0 +1,78 @@
+/* Mont Black — RootColors entry
+   Accents + menu hit-testing */
+
+@import url("Misc/Accents Code/root.css");
+
+/* ===== Popup menus — hit-testing only (stability) ===== */
+html.ContextMenuPopup,
+body.ContextMenuPopup {
+  background: var(--mont-bg, #0B0C10) !important;
+  background-color: var(--mont-bg, #0B0C10) !important;
+  pointer-events: auto !important;
+  overflow: visible !important;
+  border-radius: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  -webkit-app-region: no-drag !important;
+}
+
+.popup_body,
+.popup_menu,
+.popup_block,
+.shadow_content,
+.menu_content,
+[class*="contextmenu_"],
+[class*="ContextMenu"] {
+  pointer-events: auto !important;
+  overflow: visible !important;
+  -webkit-app-region: no-drag !important;
+}
+
+.shadow_ul,
+.shadow_ur,
+.shadow_bl,
+.shadow_br,
+.shadow_top,
+.shadow_bottom,
+.shadow_left,
+.shadow_right {
+  display: block !important;
+  opacity: 0 !important;
+  visibility: visible !important;
+  background: transparent !important;
+  pointer-events: auto !important;
+  -webkit-app-region: no-drag !important;
+}
+
+.shadow_top {
+  min-height: 20px !important;
+  height: 20px !important;
+  width: 100% !important;
+}
+.shadow_bottom {
+  min-height: 8px !important;
+  height: 8px !important;
+  width: 100% !important;
+}
+.shadow_left,
+.shadow_right {
+  min-width: 8px !important;
+  width: 8px !important;
+}
+
+.popup_menu_item,
+.contextMenuItem,
+.popup_menu [role="menuitem"],
+.popup_body [role="menuitem"] {
+  pointer-events: auto !important;
+  -webkit-app-region: no-drag !important;
+}
+
+html body ._3pofGqV0buiKAfMPEs3_82,
+._3pofGqV0buiKAfMPEs3_82 {
+  background: var(--mont-bg, #0B0C10) !important;
+  border-radius: var(--mont-radius-menu, 16px) !important;
+  border: 1px solid var(--mont-border) !important;
+  box-shadow: var(--mont-menu-shadow) !important;
+  color: var(--mont-text) !important;
+}
