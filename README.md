@@ -6,7 +6,7 @@
 
 **Dark charcoal Steam theme for Millennium**
 
-Soft glass on the library · cyan accents · clean top bar with the avatar ring
+Soft glass on the library - cyan accents - clean top bar with the avatar ring
 
 [GitHub](https://github.com/iBedro) · Discord `i.Bedro`
 
@@ -18,9 +18,9 @@ Soft glass on the library · cyan accents · clean top bar with the avatar ring
 
 <div align="center">
 
-| Library | Store |
-| :---: | :---: |
-| <img src="assets/header.png" width="420" alt="Library preview"> | <img src="assets/splash.png" width="420" alt="Store preview"> |
+<img src="assets/header.png" width="720" alt="Library">
+
+<img src="assets/splash.png" width="720" alt="Store">
 
 </div>
 
