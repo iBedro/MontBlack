@@ -1,26 +1,52 @@
+<div align="center">
+
+<img src="assets/logo.png" width="160" alt="Mont Black logo">
+
 # Mont Black
 
-Dark charcoal Steam theme for Millennium. Soft glass on the library, cyan accents, and a clean top bar with the avatar ring. Play and Install stay Steam blue on purpose.
+**Dark charcoal Steam theme for Millennium**
 
-Made by Bedro.
+Soft glass on the library · cyan accents · clean top bar with the avatar ring
+
+[GitHub](https://github.com/iBedro) · Discord `i.Bedro`
+
+</div>
+
+---
 
 ## Preview
 
-![Library](assets/header.png)
+<div align="center">
 
-![Store](assets/splash.png)
+| Library | Store |
+| :---: | :---: |
+| <img src="assets/header.png" width="420" alt="Library preview"> | <img src="assets/splash.png" width="420" alt="Store preview"> |
+
+</div>
+
+---
 
 ## Install
 
-Drop the `MontBlack` folder into `Steam/millennium/themes/`, open Millennium Themes, pick Mont Black, turn on CSS and JS injection, then reload Steam.
+1. Install [Millennium](https://steambrew.app)
+2. Put the `MontBlack` folder in `Steam/millennium/themes/`
+3. Open Steam → Millennium → Themes
+4. Select **Mont Black**, turn on CSS + JS injection, reload Steam
 
-## Links
+---
 
-- GitHub: [iBedro](https://github.com/iBedro) · [MontBlack](https://github.com/iBedro/MontBlack)
-- Discord: `i.Bedro`
+## Colors
 
-## Notes
+| | |
+| --- | --- |
+| Base | `#0B0C10` |
+| Accent | `#66FCF1` |
+| Play / Install | Steam blue |
 
-Most of the look lives in the root files. `Main/Header` is the top bar and avatar ring, `Main/Store` is the store, and `Misc` has the colors and small fixes.
+---
 
-Black `#0B0C10` · Accent `#66FCF1` · v5.2.1
+<div align="center">
+
+Made by **Bedro** · v5.2.1
+
+</div>
