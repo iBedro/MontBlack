@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/logo.png" width="160" alt="Mont Black logo">
+<img src="logo-montblack-clean.png" width="160" alt="Mont Black logo">
 
 # Mont Black
 
