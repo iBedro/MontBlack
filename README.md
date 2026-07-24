@@ -4,6 +4,12 @@ Dark charcoal Steam theme for Millennium. Soft glass on the library, cyan accent
 
 Made by Bedro.
 
+## Preview
+
+![Library](assets/header.png)
+
+![Store](assets/splash.png)
+
 ## Install
 
 Drop the `MontBlack` folder into `Steam/millennium/themes/`, open Millennium Themes, pick Mont Black, turn on CSS and JS injection, then reload Steam.
