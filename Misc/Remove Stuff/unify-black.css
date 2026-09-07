@@ -16,10 +16,24 @@ html, body,
 [class*="LibraryHome"],
 [class*="Shelf"],
 [class*="WhatsNew"],
-[class*="DownloadPage"],
-[class*="downloads_"] {
+[class*="DownloadPage"] {
   background: var(--mont-bg, #0B0C10) !important;
   background-color: var(--mont-bg, #0B0C10) !important;
+  background-image: none !important;
+}
+
+/* Menu popup WINDOWS must not inherit the global html/body fill —
+   that fill is the sharp outer rectangle around Steam/View menus. */
+html.ContextMenuPopup,
+body.ContextMenuPopup,
+html:has(> body > .popup_block),
+html:has(> body > .popup_menu),
+html:has(> body > .popup_body),
+body:has(> .popup_block),
+body:has(> .popup_menu),
+body:has(> .popup_body) {
+  background: transparent !important;
+  background-color: transparent !important;
   background-image: none !important;
 }
 
@@ -46,11 +60,10 @@ html, body,
   background-image: none !important;
 }
 
-/* Soft elevated cards stay charcoal-black family (never navy) */
-._7EGqd8bdiXJBd2fj5Hh8r,
+/* Soft elevated cards stay charcoal-black family (never navy).
+   ModalPosition_Content is a POSITIONING layer — never paint it. */
 ._31ptFGGMZrSQc5BCX1e5lm,
 ._5uvIN6jXDXzzck59F-nhv,
-.ModalPosition_Content,
 .DialogContent,
 .DialogBody,
 .DialogHeader,
@@ -60,8 +73,9 @@ html, body,
   background-image: none !important;
 }
 
-/* Progress / selection highlights — never Steam bright blue fill */
-[class*="Progress"] > *,
-[class*="progressBar"] > div {
+/* Progress fill only — do not restyle every Progress descendant */
+[class*="progressbar_Bar"],
+[class*="progressbar_Indeterminate"],
+[class*="AnimateProgress"] {
   background-image: none !important;
 }

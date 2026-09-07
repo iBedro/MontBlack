@@ -32,4 +32,7 @@
   --bluehighlight: var(--mont-surface-2);
   --blueborder: var(--mont-border);
   --systemAccentColor: var(--mont-accent-strong);
+  --color-progressbar-foreground: var(--mont-accent);
+  --color-progressbar-background: var(--mont-elevated);
+  --download-progress-fill: var(--mont-accent);
 }

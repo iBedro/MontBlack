@@ -47,6 +47,6 @@ Soft glass on the library - cyan accents - clean top bar with the avatar ring
 
 <div align="center">
 
-Made by **Bedro** · v5.2.1
+Made by **Bedro** · v5.2.2
 
 </div>

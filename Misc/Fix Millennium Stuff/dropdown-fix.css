@@ -79,9 +79,7 @@ body.ModalDialogPopup .DialogMenuPosition {
 }
 
 body.ModalDialogPopup .PP7LM0Ow1K5qkR8WElLpt,
-body.ModalDialogPopup ._3pofGqV0buiKAfMPEs3_82,
-body.ModalDialogPopup .DialogDropDownMenu,
-body.ModalDialogPopup [class*="dropdown_DialogDropDownMenu"] {
+body.ModalDialogPopup ._3pofGqV0buiKAfMPEs3_82 {
   width: unset !important;
   min-width: unset !important;
   max-width: unset !important;
@@ -90,8 +88,8 @@ body.ModalDialogPopup [class*="dropdown_DialogDropDownMenu"] {
   pointer-events: auto !important;
   -webkit-app-region: no-drag !important;
   background: var(--mont-bg, #0B0C10) !important;
-  border: 1px solid rgba(255, 255, 255, 0.06) !important;
-  border-radius: 6px !important;
+  border: none !important;
+  border-radius: 14px !important;
   box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.25) !important;
   padding: 4px 0 !important;
   color: #ffffff !important;
@@ -140,7 +138,7 @@ body.ContextMenuPopup {
   min-width: unset !important;
   transform: none !important;
   overflow: visible !important;
-  background: var(--mont-bg, #0B0C10) !important;
+  background: transparent !important;
 }
 
 body.ContextMenuPopup .PP7LM0Ow1K5qkR8WElLpt,

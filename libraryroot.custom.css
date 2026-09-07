@@ -1,4 +1,4 @@
-/* Mont Black 5.2.1 — modular entry
+/* Mont Black 5.2.2 — modular entry
    Misc = accents + remove shadows + Millennium fixes
    Main = Header + Store
    Rest = library/menus/dialogs */
@@ -563,9 +563,8 @@ body,
   pointer-events: auto !important;
   position: relative !important;
   z-index: 500 !important;
-  flex: 0 0 50px !important;
-  min-height: 50px !important;
-  max-height: 56px !important;
+  /* NOTE: no forced flex/height here — forcing 50px squashed the native
+     download status layout (text overlapping the progress bar) */
   overflow: visible !important;
   /* CRITICAL: drag on this bar eats all clicks — force no-drag */
   -webkit-app-region: no-drag !important;
@@ -580,18 +579,41 @@ body,
   -webkit-app-region: no-drag !important;
 }
 
-/* Game capsules keep slight lift; shelves stay flat black */
-._7EGqd8bdiXJBd2fj5Hh8r {
-  border-radius: 14px !important;
+/* Game capsules — tidy grid look. Scoped to LARGE Portrait/Landscape artwork
+   ONLY; small sidebar/list icons must stay untouched (NOT circular).
+   NOTE: old hash _7EGqd8bdiXJBd2fj5Hh8r now belongs to Game Recording UI — removed. */
+._1R9r2OBCxAmtuUVrgBEUBw._3Ehhd5MxErV_bXQE4qVhzB,
+._1R9r2OBCxAmtuUVrgBEUBw.ZsU8nIIpj8MJn0vzMzSp1,
+._3Ehhd5MxErV_bXQE4qVhzB ._1R9r2OBCxAmtuUVrgBEUBw,
+.ZsU8nIIpj8MJn0vzMzSp1 ._1R9r2OBCxAmtuUVrgBEUBw {
+  border-radius: 12px !important;
   overflow: hidden !important;
   border: 1px solid rgba(255, 255, 255, 0.06) !important;
   background: #12141b !important;
-  transition: transform 220ms cubic-bezier(0.22, 1, 0.36, 1), border-color 220ms cubic-bezier(0.22, 1, 0.36, 1) !important;
+  transition: transform 220ms cubic-bezier(0.22, 1, 0.36, 1), border-color 220ms cubic-bezier(0.22, 1, 0.36, 1), filter 220ms ease !important;
 }
 
-._7EGqd8bdiXJBd2fj5Hh8r:hover {
-  border-color: rgba(255, 255, 255, 0.12) !important;
+._1R9r2OBCxAmtuUVrgBEUBw._3Ehhd5MxErV_bXQE4qVhzB:hover,
+._1R9r2OBCxAmtuUVrgBEUBw.ZsU8nIIpj8MJn0vzMzSp1:hover {
+  border-color: rgba(255, 255, 255, 0.14) !important;
   transform: translateY(-2px);
+  filter: brightness(1.06);
+}
+
+/* Keep the artwork clipped to the rounded frame */
+._1R9r2OBCxAmtuUVrgBEUBw._3Ehhd5MxErV_bXQE4qVhzB img,
+._1R9r2OBCxAmtuUVrgBEUBw.ZsU8nIIpj8MJn0vzMzSp1 img {
+  border-radius: inherit !important;
+}
+
+/* Small game icons (collapsed sidebar, lists) — square-ish, never circular */
+._1vO6BoiVslZgs1kqDGdUs8 img,
+._1vO6BoiVslZgs1kqDGdUs8 ._1R9r2OBCxAmtuUVrgBEUBw,
+._2-J2nMJ1zmDok8-jqXlf1e,
+._2-J2nMJ1zmDok8-jqXlf1e img {
+  border-radius: 4px !important;
+  border: none !important;
+  background: transparent !important;
 }
 
 /* Play / Install — previous grouped look */
@@ -675,11 +697,10 @@ button.DialogButton.Primary:active {
   color: #ffffff !important;
 }
 
-.ModalDialogPopup .DialogContent,
-.ModalPosition_Content,
-.DialogBody,
-.DialogHeader,
-.DialogFooter {
+/* NOTE: ModalPosition_Content / DialogHeader / DialogBody / DialogFooter are
+   NOT painted #0B0C10 here anymore — mixed blacks created a stray dark band
+   on top of launch dialogs. unify-black paints the dialog surfaces #12141b. */
+.ModalDialogPopup .DialogContent {
   background: #0B0C10 !important;
   color: #ffffff !important;
   border-color: rgba(255, 255, 255, 0.07) !important;
@@ -703,6 +724,75 @@ body.ModalDialogPopup .ModalPosition_Content,
 .ModalDialogPopup .DialogHeader {
   border-top-left-radius: 20px !important;
   border-top-right-radius: 20px !important;
+}
+
+/* Launching / generic popup titles — do not clip under window chrome.
+   NOTE: no forced paddings/min-heights here — they pushed dialog content
+   down and created a misaligned black band on the launch popup. */
+.DialogHeader,
+.ModalDialogPopup .DialogHeader,
+body.ModalDialogPopup .DialogHeader {
+  overflow: visible !important;
+  clip-path: none !important;
+  color: #ffffff !important;
+}
+
+body.ModalDialogPopup .DialogContent,
+body.ModalDialogPopup .DialogContentTransition,
+body.ModalDialogPopup .DialogContent_InnerWidth {
+  overflow: visible !important;
+}
+
+/* Positioning wrapper + drag strip stay TRANSPARENT — never a painted layer */
+.ModalPosition,
+body.ModalDialogPopup .ModalPosition,
+.ModalPosition_TopBar,
+body.ModalDialogPopup .title-area {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+/* POPUP/MODAL title bars FLOAT OVER the dialog content — unify-black paints
+   every [class*="TitleBar"] opaque #0B0C10, which drew a black band over the
+   top of launch/"Starting game" dialogs. Inside ANY modal/popup container the
+   title strip must stay transparent (only the MAIN window titlebar is solid). */
+body.ModalDialogPopup [class*="TitleBar"],
+body.ModalDialogPopup [class*="titlebar"],
+body.ModalDialogPopup [class*="TopBar"],
+html.ModalDialogPopup [class*="TitleBar"],
+html.ModalDialogPopup [class*="titlebar"],
+body.FullModalOverlay [class*="TitleBar"],
+body.FullModalOverlay [class*="titlebar"],
+.FullModalOverlay [class*="TitleBar"],
+.FullModalOverlay [class*="titlebar"],
+.FullModalOverlay [class*="TopBar"],
+.FullModalOverlay .title-area,
+.ModalOverlayContent [class*="TitleBar"],
+.ModalOverlayContent [class*="titlebar"],
+.ModalOverlayContent [class*="TopBar"],
+.ModalPosition [class*="TitleBar"],
+.ModalPosition [class*="titlebar"],
+.ModalPosition [class*="TopBar"],
+.ModalPosition .title-area,
+.ModalPosition ._1C4ofWxNRcQbDwIk05CYUY,
+.ModalPosition ._2HQkJiiv6Bt1JagAPfUpnV,
+.ModalPosition .KP71O20zFXDPkRko_NlMm,
+.FullModalOverlay ._1C4ofWxNRcQbDwIk05CYUY,
+.FullModalOverlay ._2HQkJiiv6Bt1JagAPfUpnV,
+.FullModalOverlay .KP71O20zFXDPkRko_NlMm {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+body.ModalDialogPopup .DialogBody {
+  overflow: visible !important;
+}
+
+body.ModalDialogPopup .DialogBody img {
+  border-radius: 12px !important;
 }
 
 .ModalDialogPopup .DialogFooter {
@@ -873,7 +963,7 @@ html body.DesktopUI ._3pofGqV0buiKAfMPEs3_82,
   background-color: var(--mont-bg, #0B0C10) !important;
   background-image: none !important;
   border-radius: var(--mont-radius-menu, 16px) !important;
-  border: 1px solid var(--mont-border, rgba(255, 255, 255, 0.06)) !important;
+  border: none !important;
   box-shadow: var(--mont-menu-shadow, 0 10px 28px rgba(0, 0, 0, 0.5)) !important;
   color: var(--mont-text, #ffffff) !important;
   padding: 6px 4px !important;
@@ -1018,13 +1108,13 @@ input#store_search {
   color: #ffffff !important;
 }
 
-/* ===== MENUS — soft corners on panel; square window hit-box ===== */
+/* ===== MENUS — window/overlay layers must stay TRANSPARENT (black-screen fix) ===== */
 html.ContextMenuPopup,
 body.ContextMenuPopup,
 .ContextMenuPopup,
 ._14wqdluDeDnnEcg3OSLEmd {
-  background: var(--mont-bg, #0B0C10) !important;
-  background-color: var(--mont-bg, #0B0C10) !important;
+  background: transparent !important;
+  background-color: transparent !important;
   background-image: none !important;
   margin: 0 !important;
   padding: 0 !important;
@@ -1062,25 +1152,61 @@ body.ContextMenuPopup::-webkit-scrollbar,
 [class*="ContextMenu"],
 [class*="contextMenu"],
 .contextMenu,
-.popup_block,
-.popup_block_new,
 .popup_body,
 .popup_menu,
-.shadow_content,
-.menu,
 .menu_content {
   background: #0B0C10 !important;
   background-color: #0B0C10 !important;
   background-image: none !important;
   color: #ffffff !important;
-  border: none !important;
-  box-shadow: none !important;
-  border-radius: 16px !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.55) !important;
+  border-radius: 14px !important;
   overflow: visible !important;
   pointer-events: auto !important;
   scrollbar-width: none !important;
   -ms-overflow-style: none !important;
   -webkit-app-region: no-drag !important;
+}
+
+.popup_body .popup_menu,
+.shadow_content {
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* popup_block wrappers FILL the whole menu window — painting them black made
+   top-menubar menus (Steam/View/Friends…) look SQUARE. Keep them transparent;
+   only popup_body/popup_menu (the actual panel) carries the dark bg. */
+.popup_block,
+.popup_block_new {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  pointer-events: auto !important;
+  -webkit-app-region: no-drag !important;
+}
+
+/* BLACK-SCREEN FIX — fullscreen helper layers created when a context menu opens.
+   They match [class*="ContextMenu"] above and were painted opaque black,
+   blacking out the whole window on right-click. Keep them fully transparent. */
+[class*="ContextMenuMouseOverlay"],
+[class*="ContextMenuFocusContainer"],
+[class*="ContextMenuPosition"],
+[class*="contextmenu_ContextMenuMouseOverlay"],
+[class*="contextmenu_ContextMenuFocusContainer"],
+[class*="contextmenu_ContextMenuPosition"],
+._3Knd7Am6tTwTTu605YN4IX,
+._2yAm5LY_eu-Vg_52l0HFlM {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  border: none !important;
+  box-shadow: none !important;
 }
 
 .PP7LM0Ow1K5qkR8WElLpt::-webkit-scrollbar,
@@ -1107,7 +1233,7 @@ body.ContextMenuPopup::-webkit-scrollbar,
 .ZmMzAFCxvwjUFR245iuLe,
 ._12DEITwNCR63H338pFyoji,
 ._2LigNhjmULtkRCXW5237ai {
-  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+  border: none !important;
   border-radius: 16px !important;
   padding: 4px !important;
   overflow: visible !important;
@@ -1815,7 +1941,6 @@ body:not(.ModalDialogPopup):not(.FullModalOverlay):not(.ContextMenuPopup),
 }
 
 /* Soft cards only — same family, not a different hue */
-._7EGqd8bdiXJBd2fj5Hh8r,
 ._31ptFGGMZrSQc5BCX1e5lm,
 ._5uvIN6jXDXzzck59F-nhv,
 ._3eVREaIAGyRjbf0bkFjR9Y,
@@ -1834,15 +1959,11 @@ body:not(.ModalDialogPopup):not(.FullModalOverlay):not(.ContextMenuPopup),
   background-image: none !important;
 }
 
-/* Downloads UI — one flat black surface, no seams */
+/* Downloads UI — page/list only; do not restyle every downloads_* widget */
 [class*="DownloadPage"],
 [class*="downloadpage"],
 [class*="DownloadsPage"],
-[class*="downloadlist"],
-[class*="DownloadGameRow"],
-[class*="downloadgame"],
-[class*="DownloadsWindow"],
-[class*="downloads_"] {
+[class*="DownloadsWindow"] {
   background: #0B0C10 !important;
   background-color: #0B0C10 !important;
   background-image: none !important;
@@ -1851,12 +1972,10 @@ body:not(.ModalDialogPopup):not(.FullModalOverlay):not(.ContextMenuPopup),
   box-shadow: none !important;
 }
 
-[class*="Download"] [class*="Row"],
-[class*="download"] [class*="Row"],
-[class*="Download"] [class*="Item"],
-[class*="download"] [class*="Item"],
 [class*="DownloadGameRow"],
-[class*="downloadgame"] {
+[class*="downloadgame"],
+[class*="downloadlist"] > [class*="Row"],
+[class*="DownloadList"] > [class*="Row"] {
   background: #12141b !important;
   background-color: #12141b !important;
   border: 1px solid rgba(255, 255, 255, 0.06) !important;
@@ -1865,22 +1984,70 @@ body:not(.ModalDialogPopup):not(.FullModalOverlay):not(.ContextMenuPopup),
   margin: 6px 8px !important;
 }
 
-[class*="Download"] [class*="Progress"],
-[class*="download"] [class*="Progress"],
-[class*="ProgressBar"],
-[class*="progressBar"] {
+/* Progress TRACK only — never wrap Status/Paused/header graph in a pill */
+[class*="progressbar_ProgressBar"],
+[class*="ProgressBarWrapper"] > [class*="ProgressBar"]:not([class*="Wrapper"]),
+[class*="DetailedDownloadProgress"] [class*="progressbar_ProgressBar"] {
   background: #161616 !important;
   border-radius: 999px !important;
   overflow: hidden !important;
 }
 
-[class*="Download"] [class*="Progress"] > *,
-[class*="download"] [class*="Progress"] > *,
-[class*="ProgressBar"] > *,
-[class*="progressBar"] > div {
-  background: #45A29E !important;
+/* Fill only — painting every Progress child made 0% bars fully teal */
+[class*="progressbar_Bar"],
+[class*="progressbar_Indeterminate"],
+[class*="AnimateProgress"],
+[class*="ProgressBar"] [class*="Fill"],
+[class*="ProgressBar"] [class*="fill"] {
+  background: var(--mont-accent, #45A29E) !important;
   background-image: none !important;
   box-shadow: none !important;
+}
+
+/* Overlay labels on the queue bar must stay readable on cyan fill */
+[class*="progressbar_ProgressBar"],
+[class*="progressbar_ProgressBar"] *,
+[class*="DetailedDownloadProgress"] [class*="Status"],
+[class*="DetailedDownloadProgress"] [class*="Percent"],
+[class*="DownloadGameRow"] [class*="ProgressBar"],
+[class*="DownloadGameRow"] [class*="ProgressBar"] * {
+  color: #ffffff !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.72) !important;
+}
+
+/* Header Paused chip: keep layout, high-contrast text
+   (NOTE: do NOT include DetailedDownloadProgress Status here — that class
+   lives in the BOTTOM BAR and painting it created a wide gray layer
+   behind "Downloading X of Y") */
+[class*="DownloadPage"] [class*="Paused"],
+[class*="DownloadsPage"] [class*="Paused"],
+[class*="DownloadStatus"] [class*="Paused"] {
+  background: #1a1d26 !important;
+  color: #ffffff !important;
+  border-radius: 999px !important;
+  overflow: visible !important;
+}
+
+/* Bottom-bar download status — text sits on the bar itself, NO layer behind it */
+._3vCzSrrXZzZjVJFZNg9SGu [class*="Status"],
+._3vCzSrrXZzZjVJFZNg9SGu ._2VtAqT03BpBsVdmxwptn9D,
+._3vCzSrrXZzZjVJFZNg9SGu ._1xCcFYWIrJ7W8WRDmGvR3y,
+._3vCzSrrXZzZjVJFZNg9SGu ._1sCy-pm412Smb0wJx0W-4,
+[class*="BottomBar"] [class*="DetailedDownloadProgress"],
+[class*="BottomBar"] [class*="DetailedDownloadProgress"] [class*="Status"],
+[class*="BottomBar"] [class*="DetailedDownloadProgress"] [class*="Percent"] {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+[class*="DownloadPage"] [class*="Header"] [class*="Progress"],
+[class*="DownloadsPage"] [class*="Header"] [class*="Progress"],
+[class*="DownloadPage"] [class*="Stats"] [class*="Progress"] {
+  overflow: visible !important;
+  border-radius: 8px !important;
+  background: transparent !important;
 }
 
 /* Backdrop behind dialogs — NOT solid black; keep Steam visible */
@@ -2242,10 +2409,7 @@ html body ._1d6VIquCc410kNE7rDAje6 [style*="26, 159, 255"] {
 .eKmEXJCm_lgme24Fp_HWt,
 ._1axoiZsC1RBp22JQmxiBIc,
 .LOeGvMJsCWqzYJ_LwvLfe,
-.O7cW3FbZwmFjlnkBXHSAc,
-[class*="PagedSettingsDialog"] [class*="Field"],
-[class*="SettingsDialog"] [class*="Field"],
-[class*="settings_"] [class*="Field"] {
+.O7cW3FbZwmFjlnkBXHSAc {
   background: #161616 !important;
   background-color: #161616 !important;
   background-image: none !important;
@@ -2253,6 +2417,20 @@ html body ._1d6VIquCc410kNE7rDAje6 [style*="26, 159, 255"] {
   border-radius: 10px !important;
   color: #ffffff !important;
   box-shadow: none !important;
+}
+
+/* Settings rows (incl. Millennium settings) — NO boxes/outlines per row.
+   The generic [class*="Field"] boxing made every row an outlined pill. */
+.MillenniumSettings [class*="Field"],
+[class*="PagedSettingsDialog"] [class*="Field"],
+[class*="SettingsDialog"] [class*="Field"],
+[class*="settings_"] [class*="Field"] {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  color: #ffffff !important;
 }
 
 .eKmEXJCm_lgme24Fp_HWt:hover,
@@ -2462,7 +2640,6 @@ html body .l_0WJ2pzm_5Zp7gfT_UZz._26_C5yo_aJeYJo2yIV90ls ._3nhzM2H8Opkomzs5OG5ou
 #mont-nav-glass {
   pointer-events: none !important;
 }
-`
 
 /* ===== FINAL SuperNav cleanup — wins over legacy gray boxes ===== */
 html body ._7AlhCx3XGzBeIrQaCneUD,
@@ -2621,4 +2798,268 @@ body.ContextMenuPopup {
 .DialogContentTransition {
   transform: none !important;
   filter: none !important;
+}
+
+/* ===== Hide "Enter Big Picture Mode" titlebar button — COMPLETELY =====
+   Split into standalone rules (a single unsupported selector like :has()
+   would invalidate a combined rule list). ModeToggleButton is the header
+   Big Picture toggle from Steam's own class map. */
+._3arz-hc3FJ0QKXLPRUSaah {
+  display: none !important;
+  width: 0 !important;
+  min-width: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  overflow: hidden !important;
+  pointer-events: none !important;
+}
+
+.SVGIcon_BigPicture {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+button:has(> .SVGIcon_BigPicture) {
+  display: none !important;
+}
+
+div:has(> svg.SVGIcon_BigPicture) {
+  display: none !important;
+}
+
+/* ===== Game list (left sidebar) — selection/hover: neutral GLASS, no Steam blue #586f96 ===== */
+._3km84Vscc0uS91f0RN_30C:hover,
+._3km84Vscc0uS91f0RN_30C._2-O4ZG0KrnSrzISHBKctFQ._3cMVyOc-9F9Jvp3uKF7_xj,
+._1UBpAXP408Ez_L_mXhW5Q9._2-O4ZG0KrnSrzISHBKctFQ:hover,
+._1UBpAXP408Ez_L_mXhW5Q9._2-O4ZG0KrnSrzISHBKctFQ._3cMVyOc-9F9Jvp3uKF7_xj,
+._1UBpAXP408Ez_L_mXhW5Q9._2-O4ZG0KrnSrzISHBKctFQ :hover,
+._1UBpAXP408Ez_L_mXhW5Q9 ._2-O4ZG0KrnSrzISHBKctFQ:hover,
+._1UBpAXP408Ez_L_mXhW5Q9 ._2-O4ZG0KrnSrzISHBKctFQ._3cMVyOc-9F9Jvp3uKF7_xj,
+._1UBpAXP408Ez_L_mXhW5Q9 ._2-O4ZG0KrnSrzISHBKctFQ :hover {
+  background-color: rgba(255, 255, 255, 0.09) !important;
+  background-image: none !important;
+}
+
+/* ===== Dropdown menus (language selector etc.) — restore scrolling so ALL entries are reachable ===== */
+.DialogDropDownMenu,
+[class*="dropdown_DialogDropDownMenu"],
+._30wJO3MC4x-I1OWpy1TAeE,
+body.ModalDialogPopup .DialogDropDownMenu,
+body.ModalDialogPopup [class*="dropdown_DialogDropDownMenu"],
+body.ModalDialogPopup ._30wJO3MC4x-I1OWpy1TAeE {
+  max-height: min(70vh, 440px) !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  scrollbar-width: thin !important;
+  scrollbar-color: rgba(255, 255, 255, 0.22) transparent !important;
+  background: var(--mont-bg, #0B0C10) !important;
+  border: none !important;
+  border-radius: 14px !important;
+  padding: 6px 0 !important;
+  color: #ffffff !important;
+  box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.25) !important;
+  transform: none !important;
+}
+
+.DialogDropDownMenu::-webkit-scrollbar,
+._30wJO3MC4x-I1OWpy1TAeE::-webkit-scrollbar {
+  width: 6px !important;
+  height: 6px !important;
+  display: block !important;
+}
+
+.DialogDropDownMenu::-webkit-scrollbar-thumb,
+._30wJO3MC4x-I1OWpy1TAeE::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.22) !important;
+  border-radius: 999px !important;
+}
+
+.DialogDropDownMenu::-webkit-scrollbar-track,
+._30wJO3MC4x-I1OWpy1TAeE::-webkit-scrollbar-track {
+  background: transparent !important;
+}
+
+/* ===== Hide "What's New" announcements shelf on library home ===== */
+._17uEBe5Ri8TMsnfELvs8-N,
+[class*="libraryhome_UpdatesContainer"],
+[class*="UpdatesContainer"] {
+  display: none !important;
+}
+
+/* ===== Slim, unobtrusive scrollbars (settings sidebar/content were chunky gray) ===== */
+::-webkit-scrollbar {
+  width: 8px !important;
+  height: 8px !important;
+  background: transparent !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.10) !important;
+  border-radius: 999px !important;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.20) !important;
+}
+
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-corner {
+  background: transparent !important;
+}
+
+::-webkit-scrollbar-button {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+/* ===== Header account: BLUE name + STATUS DOT on avatar ===== */
+html body ._3yD46y5pd3zOGR7CzKs0mC ._11phBiBefcVQdzrnrezkKa,
+._3yD46y5pd3zOGR7CzKs0mC ._11phBiBefcVQdzrnrezkKa {
+  color: #4FA8FF !important;
+}
+
+html body ._3yD46y5pd3zOGR7CzKs0mC:hover ._11phBiBefcVQdzrnrezkKa {
+  color: #7CC0FF !important;
+}
+
+/* Breath ring replaced by a status dot (bottom-right of avatar).
+   Default = offline gray; colored by Steam's own status classes. */
+html body ._3yD46y5pd3zOGR7CzKs0mC .avatarHolder::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: auto -2px -2px auto !important;
+  width: 11px !important;
+  height: 11px !important;
+  border-radius: 50% !important;
+  border: 2px solid #0B0C10 !important;
+  background: #6b7076 !important; /* offline */
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.6) !important;
+  animation: none !important;
+  z-index: 5 !important;
+  pointer-events: none !important;
+}
+
+html body ._3yD46y5pd3zOGR7CzKs0mC .online .avatarHolder::after,
+html body ._3yD46y5pd3zOGR7CzKs0mC .avatarHolder.online::after,
+html body .online ._3yD46y5pd3zOGR7CzKs0mC .avatarHolder::after {
+  background: #4FA8FF !important; /* online — blue */
+}
+
+html body ._3yD46y5pd3zOGR7CzKs0mC .ingame .avatarHolder::after,
+html body ._3yD46y5pd3zOGR7CzKs0mC .avatarHolder.ingame::after,
+html body .ingame ._3yD46y5pd3zOGR7CzKs0mC .avatarHolder::after {
+  background: #8cd61d !important; /* in-game — green */
+}
+
+html body ._3yD46y5pd3zOGR7CzKs0mC .awayOrSnooze .avatarHolder::after,
+html body ._3yD46y5pd3zOGR7CzKs0mC .avatarHolder.awayOrSnooze::after,
+html body .awayOrSnooze ._3yD46y5pd3zOGR7CzKs0mC .avatarHolder::after {
+  background: #d8b45a !important; /* away/snooze — amber */
+}
+
+/* Settings Account row: the weird tall blue line → clean status dot */
+._2h67VWTK4yphSgPmZ5hJn .avatarHolder .avatarStatus {
+  display: block !important;
+  position: absolute !important;
+  inset: auto -3px -3px auto !important;
+  width: 12px !important;
+  height: 12px !important;
+  border-radius: 50% !important;
+  border: 2px solid #0B0C10 !important;
+  background: #6b7076 !important;
+  -webkit-mask: none !important;
+  mask: none !important;
+}
+
+._2h67VWTK4yphSgPmZ5hJn .online .avatarHolder .avatarStatus,
+._2h67VWTK4yphSgPmZ5hJn .avatarHolder.online .avatarStatus {
+  background: #4FA8FF !important;
+}
+
+._2h67VWTK4yphSgPmZ5hJn .ingame .avatarHolder .avatarStatus,
+._2h67VWTK4yphSgPmZ5hJn .avatarHolder.ingame .avatarStatus {
+  background: #8cd61d !important;
+}
+
+._2h67VWTK4yphSgPmZ5hJn .awayOrSnooze .avatarHolder .avatarStatus,
+._2h67VWTK4yphSgPmZ5hJn .avatarHolder.awayOrSnooze .avatarStatus {
+  background: #d8b45a !important;
+}
+
+/* Same colors when the status class sits higher in the tree */
+.online ._2h67VWTK4yphSgPmZ5hJn .avatarHolder .avatarStatus {
+  background: #4FA8FF !important;
+}
+
+.ingame ._2h67VWTK4yphSgPmZ5hJn .avatarHolder .avatarStatus {
+  background: #8cd61d !important;
+}
+
+.awayOrSnooze ._2h67VWTK4yphSgPmZ5hJn .avatarHolder .avatarStatus {
+  background: #d8b45a !important;
+}
+
+/* ===== Menus: INNER rounded panel only — kill OUTER rectangular chrome ===== */
+html:has(> body > .popup_block),
+html:has(> body > .popup_menu),
+html:has(> body > .popup_body),
+body:has(> .popup_block),
+body:has(> .popup_menu),
+body:has(> .popup_body),
+html.ContextMenuPopup,
+body.ContextMenuPopup,
+.popup_block,
+.popup_block_new,
+.shadow_content {
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.PP7LM0Ow1K5qkR8WElLpt,
+._3pofGqV0buiKAfMPEs3_82,
+._29AJUo6aKT93gX24N5WFj_,
+.BaERlvVMT45z7ZQ-TZiAe,
+.ZmMzAFCxvwjUFR245iuLe,
+._12DEITwNCR63H338pFyoji,
+._2LigNhjmULtkRCXW5237ai,
+.popup_body,
+.popup_menu,
+.menu_content,
+.DialogDropDownMenu,
+._30wJO3MC4x-I1OWpy1TAeE,
+[class*="dropdown_DialogDropDownMenu"] {
+  outline: none !important;
+  border-radius: 14px !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.55) !important;
+}
+
+.popup_body .popup_menu {
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+[class*="contextmenu_"]:not([class*="Item"]):not([class*="Overlay"]):not([class*="Focus"]):not([class*="Position"]),
+[class*="ContextMenu"]:not([class*="Item"]):not([class*="Overlay"]):not([class*="Focus"]):not([class*="Position"]):not(.ContextMenuPopup) {
+  border: none !important;
+  outline: none !important;
+  border-radius: 14px !important;
+}
+
+/* Menu items follow the soft look — rounded hover capsules */
+.popup_menu_item,
+.contextMenuItem,
+.popup_menu [role="menuitem"],
+.popup_body [role="menuitem"],
+[class*="contextmenu_contextMenuItem"],
+.DialogDropDownMenu_Item,
+._2oAiZidGyUxL-hfupFDQ2m {
+  border-radius: 8px !important;
+  margin: 1px 4px !important;
 }

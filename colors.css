@@ -3,17 +3,51 @@
 
 @import url("Misc/Accents Code/root.css");
 
-/* ===== Popup menus — hit-testing only (stability) ===== */
+/* ===== Popup menus — window chrome TRANSPARENT (outer sharp frame) =====
+   Menubar popups (Steam/View/Friends) often have no ContextMenuPopup class.
+   Kill the rectangular window fill; only popup_body is the visible panel. */
 html.ContextMenuPopup,
-body.ContextMenuPopup {
-  background: var(--mont-bg, #0B0C10) !important;
-  background-color: var(--mont-bg, #0B0C10) !important;
+body.ContextMenuPopup,
+html:has(> body > .popup_block),
+html:has(> body > .popup_menu),
+html:has(> body > .popup_body),
+body:has(> .popup_block),
+body:has(> .popup_menu),
+body:has(> .popup_body) {
+  background: transparent !important;
+  background-color: transparent !important;
   pointer-events: auto !important;
   overflow: visible !important;
   border-radius: 0 !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
   margin: 0 !important;
   padding: 0 !important;
   -webkit-app-region: no-drag !important;
+}
+
+.popup_block,
+.popup_block_new {
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.popup_body,
+.popup_menu {
+  background: var(--mont-bg, #0B0C10) !important;
+  border-radius: 14px !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: var(--mont-menu-shadow, 0 10px 28px rgba(0, 0, 0, 0.55)) !important;
+}
+
+.popup_body .popup_menu {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
 }
 
 .popup_body,
@@ -72,7 +106,7 @@ html body ._3pofGqV0buiKAfMPEs3_82,
 ._3pofGqV0buiKAfMPEs3_82 {
   background: var(--mont-bg, #0B0C10) !important;
   border-radius: var(--mont-radius-menu, 16px) !important;
-  border: 1px solid var(--mont-border) !important;
+  border: none !important;
   box-shadow: var(--mont-menu-shadow) !important;
   color: var(--mont-text) !important;
 }
