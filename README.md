@@ -1,14 +1,14 @@
 <div align="center">
 
-<img src="logo-montblack-clean.png" width="160" alt="Mont Black logo">
+<img src="logo-montblack-clean.png" width="180" alt="Mont Black logo">
 
 # Mont Black
 
 **Dark charcoal Steam theme for Millennium**
 
-Soft glass on the library - cyan accents - clean top bar with the avatar ring
+Soft glass on the library · cyan accents · clean top bar with the avatar ring
 
-[GitHub](https://github.com/iBedro) · Discord `i.Bedro`
+[GitHub](https://github.com/iBedro/MontBlack) · [SteamBrew](https://steambrew.app/theme/UymbW0CfoO3ykq1LTdgQ) · Discord `i.Bedro`
 
 </div>
 
@@ -18,9 +18,11 @@ Soft glass on the library - cyan accents - clean top bar with the avatar ring
 
 <div align="center">
 
-<img src="assets/header.png" width="720" alt="Library">
+<img src="header.png" width="720" alt="Library grid">
 
-<img src="assets/splash.png" width="720" alt="Store">
+<img src="library.png" width="720" alt="Game page">
+
+<img src="splash.png" width="720" alt="Store">
 
 </div>
 
