@@ -2,6 +2,7 @@
    Accents + menu hit-testing */
 
 @import url("Misc/Accents Code/root.css");
+@import url("Main/Login/chooser.css");
 
 /* ===== Popup menus — window chrome TRANSPARENT (outer sharp frame) =====
    Menubar popups (Steam/View/Friends) often have no ContextMenuPopup class.

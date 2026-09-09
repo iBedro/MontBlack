@@ -76,20 +76,26 @@ body,
 
 /* Kill Steam cyan header glow + inset shadows */
 .statusHeaderGlow,
-.singleWindowFocusBar,
 .FriendsListInsetShadowCtn,
 .insetShadow,
 .verticalInsetShadow,
 [class*="statusHeaderGlow"],
 [class*="InsetShadow"],
-[class*="insetShadow"],
-[class*="FocusBar"] {
+[class*="insetShadow"] {
   display: none !important;
   opacity: 0 !important;
-  visibility: hidden !important;
+  pointer-events: none !important;
   background: transparent !important;
   background-image: none !important;
   box-shadow: none !important;
+}
+
+.singleWindowFocusBar {
+  background: transparent !important;
+  box-shadow: none !important;
+  opacity: 0 !important;
+  height: 0 !important;
+  pointer-events: none !important;
 }
 
 /* Section headers = same charcoal (no striped bands) */
@@ -327,7 +333,6 @@ body,
 [class*="AvatarHolder"],
 [class*="playerAvatar"],
 [class*="PlayerAvatar"],
-[class*="Avatar"],
 .mediumHolder,
 .smallHolder,
 .largeHolder,
@@ -347,8 +352,7 @@ body,
 
 .avatar img,
 .avatarHolder img,
-[class*="avatar"] img,
-[class*="Avatar"] img,
+[class*="avatarHolder"] img,
 [class*="playerAvatar"] img,
 .mediumHolder img,
 .smallHolder img,
@@ -360,4 +364,68 @@ body,
   object-fit: cover !important;
   object-position: center !important;
   display: block !important;
+}
+
+/* Own name in Friends header — always readable (was clipped / too dark) */
+.currentUserContainer,
+.titleBarContainer .currentUserContainer {
+  display: flex !important;
+  align-items: center !important;
+  overflow: visible !important;
+}
+
+.currentUserContainer .labelHolder,
+.currentUserContainer ._4ZTzGZ5TTgFyfw1DcXLXS {
+  display: flex !important;
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+  width: auto !important;
+  max-width: none !important;
+  height: auto !important;
+  overflow: visible !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.currentUserContainer .nOdcT-MoOaXGePXLyPe0H,
+.currentUserContainer.online .nOdcT-MoOaXGePXLyPe0H,
+.currentUserContainer.away .nOdcT-MoOaXGePXLyPe0H,
+.currentUserContainer.awayOrSnooze .nOdcT-MoOaXGePXLyPe0H,
+.currentUserContainer.ingame .nOdcT-MoOaXGePXLyPe0H,
+.currentUserContainer .persona_name,
+.currentUserContainer [class*="persona_name"],
+.currentUserContainer ._2saJTAocZ9TnYXTGvnqUMC,
+.titleBarContainer .currentUserContainer .nOdcT-MoOaXGePXLyPe0H {
+  color: #ffffff !important;
+  fill: #ffffff !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  line-height: 1.3 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: block !important;
+  width: auto !important;
+  min-width: 64px !important;
+  max-width: none !important;
+  height: auto !important;
+  overflow: visible !important;
+  text-overflow: unset !important;
+  white-space: nowrap !important;
+  text-shadow: none !important;
+  filter: none !important;
+  -webkit-font-smoothing: antialiased !important;
+  -webkit-mask: none !important;
+  mask: none !important;
+  -webkit-mask-image: none !important;
+  mask-image: none !important;
+}
+
+.currentUserContainer ._2Ri005Wg_uXDTa71kdRbcN,
+.currentUserContainer .friend_status,
+.currentUserContainer .persona_menu_descriptor {
+  color: #a8a8a8 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: block !important;
+  font-size: 12px !important;
 }

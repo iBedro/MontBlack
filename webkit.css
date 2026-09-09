@@ -44,3 +44,12 @@
   border: none !important;
   box-shadow: none !important;
 }
+
+.DialogDropDown ._DialogInputContainer,
+.DialogDropDown [class*="CurrentDisplay"],
+.DialogDropDown [class*="DropDown_Current"] {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
