@@ -113,7 +113,7 @@ html body ._2UyOBeiSdBayaFdRa39N2O:hover {
   display: flex !important;
   flex-wrap: nowrap !important;
   align-items: center !important;
-  gap: 4px !important;
+  gap: 8px !important;
   height: 100% !important;
 }
 
@@ -133,9 +133,9 @@ html body.DesktopUI ._7AlhCx3XGzBeIrQaCneUD {
   flex-shrink: 0 !important;
   min-width: max-content !important;
   max-width: none !important;
-  height: 32px !important;
+  height: 38px !important;
   margin: 0 !important;
-  padding: 0 14px !important;
+  padding: 0 18px !important;
   border: none !important;
   border-radius: 0 !important;
   background: transparent !important;
@@ -145,11 +145,11 @@ html body.DesktopUI ._7AlhCx3XGzBeIrQaCneUD {
   overflow: visible !important;
   display: flex !important;
   align-items: center !important;
-  font-size: 15px !important;
-  font-weight: 600 !important;
-  letter-spacing: 0.04em !important;
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.06em !important;
   text-transform: uppercase !important;
-  line-height: 32px !important;
+  line-height: 38px !important;
   transition: color 180ms ease !important;
 }
 html body ._7AlhCx3XGzBeIrQaCneUD:hover:not(._1gqEjB5QsKT_NftD1dEsdZ):not(._2cO0HdvLEGAdhosLekWsmo),
@@ -159,7 +159,7 @@ html body ._7AlhCx3XGzBeIrQaCneUD.Eq8Px4ixn5sAFSR6_9wWQ {
   border: none !important;
   box-shadow: none !important;
   border-radius: 0 !important;
-  padding: 0 14px !important;
+  padding: 0 18px !important;
 }
 
 html body ._7AlhCx3XGzBeIrQaCneUD ._19axKcqYRuaJ8vdYKYmtTQ,
@@ -189,7 +189,7 @@ html body.DesktopUI ._7AlhCx3XGzBeIrQaCneUD._1gqEjB5QsKT_NftD1dEsdZ:not(._2cO0Hd
   border: none !important;
   border-radius: 0 !important;
   box-shadow: none !important;
-  padding: 0 14px !important;
+  padding: 0 18px !important;
   margin: 0 !important;
   overflow: visible !important;
 }
@@ -209,8 +209,8 @@ html body ._7AlhCx3XGzBeIrQaCneUD._1gqEjB5QsKT_NftD1dEsdZ:not(._2cO0HdvLEGAdhosL
   position: absolute !important;
   left: 0 !important;
   right: 0 !important;
-  bottom: -6px !important;
-  height: 2px !important;
+  bottom: -8px !important;
+  height: 3px !important;
   border-radius: 2px !important;
   background: var(--mont-accent-strong, #66FCF1) !important;
   box-shadow: 0 0 10px rgba(102, 252, 241, 0.45) !important;
